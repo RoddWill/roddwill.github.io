@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of AI/ML projects, publications, and applications focusing on predictive classification in engineering and healthcare." />   <title>Portfolio & Work | AI/ML Engineer</title>   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="description" content="Portfolio of AI/ML projects, publications, and applications focusing on predictive classification in engineering and healthcare." />   <title>My Work Showcase | AI/ML Engineer</title>   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="bg-gray-100 text-gray-800 overflow-x-hidden">     <nav class="bg-white shadow">
@@ -20,84 +20,75 @@
   </nav>
 
     <section class="container mx-auto px-4 py-16">
-    <h2 class="text-4xl font-bold mb-8 text-center">My Work</h2>     <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto text-center">
-      Showcasing my projects, publications, and applications in AI/ML across various domains.     </p>
+    <h2 class="text-4xl font-bold mb-8 text-center">My Work Showcase</h2>     <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto text-center">
+      Explore my projects, publications, and deployed applications in the field of AIML for engineering and healthcare.     </p>
 
         <div class="mb-8 text-center">
-            <button data-filter="all" class="filter-btn px-6 py-2 bg-blue-700 text-white rounded-lg mr-2 mb-2 hover:bg-blue-800 transition duration-300 font-semibold">All Work</button>
-      <button data-filter="project" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Projects</button>
-      <button data-filter="publication" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Publications</button>
-      <button data-filter="applications" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Applications</button>
-      <button data-filter="engineering" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Engineering</button>
-      <button data-filter="health" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Healthcare</button>
-      <button data-filter="journal" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Journals</button>
-      <button data-filter="conference" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Conferences</button>
-            </div>
+            <button data-filter="all" class="filter-btn primary-filter px-6 py-2 bg-blue-700 text-white rounded-lg mr-2 mb-2 hover:bg-blue-800 transition duration-300 font-semibold">All Work</button>
+      <button data-filter="project" class="filter-btn primary-filter px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Projects</button>
+      <button data-filter="publication" class="filter-btn primary-filter px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Publications</button>
+      <button data-filter="application" class="filter-btn primary-filter px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Applications</button>
+    </div>
 
-        <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <div class="col-span-full text-3xl font-bold mt-8 mb-4 text-blue-800">Projects</div>
-
-        <div class="col-span-full text-2xl font-semibold mt-4 mb-3 text-gray-700">Engineering Projects</div>
-
-                <div id="eng-project1" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-             data-type="project" data-category="engineering predictive application development">           <img src="assets/images/project1-thumbnail.jpg" alt="Project 1 Thumbnail" class="rounded mb-4 w-full h-48 object-cover">           <h3 class="font-semibold text-xl mb-2 text-blue-700">Predictive Maintenance System for Manufacturing</h3>           <p class="text-gray-700 text-sm mb-3">**Skills:** Time Series Analysis, XGBoost, Python, SQL, AWS SageMaker</p>           <p class="text-gray-600 mb-4">Developed a model to predict equipment failure in a manufacturing plant based on sensor data, reducing unplanned downtime by 15%.</p>           <a href="https://github.com/RoddWill" class="text-blue-700 hover:underline mr-4" target="_blank">GitHub Repo</a>           <a href="YOUR_LIVE_DEMO_URL" class="text-blue-700 hover:underline" target="_blank">Live Demo (Optional)</a>         </div>
-
-        <div class="col-span-full text-2xl font-semibold mt-4 mb-3 text-gray-700">Healthcare Projects</div>
-
-                <div id="health-project1" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-             data-type="project" data-category="health classification application development">           <img src="assets/images/project2-thumbnail.jpg" alt="Project 2 Thumbnail" class="rounded mb-4 w-full h-48 object-cover">           <h3 class="font-semibold text-xl mb-2 text-blue-700">Patient Risk Stratification for Chronic Disease</h3>           <p class="text-gray-700 text-sm mb-3">**Skills:** Binary Classification, Logistic Regression, SVM, scikit-learn, Data Preprocessing, Pandas</p>           <p class="text-gray-600 mb-4">Built a classification model to identify patients at high risk of developing a chronic disease based on electronic health records.</p>           <a href="https://github.com/RoddWill" class="text-blue-700 hover:underline mr-4" target="_blank">GitHub Repo</a>         </div>
-
-        <div class="col-span-full text-3xl font-bold mt-8 mb-4 text-blue-800">Publications</div>
-
-        <div class="col-span-full text-2xl font-semibold mt-4 mb-3 text-gray-700">Journal Publications</div>
-
-                <div id="journal-pub1" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-             data-type="publication" data-category="health classification research journal">           <h3 class="text-xl font-semibold mb-2 text-blue-700">
-            <a href="YOUR_PUBLICATION_URL_1" class="hover:underline" target="_blank">Title of Healthcare Classification Paper</a>           </h3>
-          <p class="text-gray-700 mb-1 text-sm">Authors: Rodd Will, Co-author 1, Co-author 2</p>           <p class="text-gray-600 text-sm mb-3">Published in: Journal Name, Volume(Issue), Pages. Date/Year</p>           <p class="text-gray-700 mb-4">
-            Brief summary of the publication, focusing on the classification model and its health application...           </p>
-                    <div class="space-x-4 text-sm">
-            <a href="YOUR_PUBLICATION_PDF_URL_1" class="text-blue-700 hover:underline" target="_blank">PDF</a>             <a href="YOUR_PUBLICATION_PAGE_URL_1" class="text-blue-700 hover:underline" target="_blank">Journal Page</a>                       </div>
+        <div id="secondary-filters" class="mb-8 text-center hidden">
+                <div id="project-subfilters" class="secondary-filter-group hidden">
+          <span class="mr-2 font-semibold">Filter Projects:</span>
+          <button data-filter="all-projects" class="filter-btn secondary-filter px-4 py-1 bg-gray-300 text-gray-800 rounded-lg mr-2 hover:bg-gray-400 transition duration-300">All Projects</button>           <button data-filter="engineering" class="filter-btn secondary-filter px-4 py-1 bg-gray-200 text-gray-800 rounded-lg mr-2 hover:bg-gray-300 transition duration-300">Engineering</button>
+          <button data-filter="health" class="filter-btn secondary-filter px-4 py-1 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">Healthcare</button>
         </div>
-
-        <div class="col-span-full text-2xl font-semibold mt-4 mb-3 text-gray-700">Conference Presentations</div>
-
-                <div id="conf-pres1" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-             data-type="publication" data-category="engineering applications conference">           <h3 class="text-xl font-semibold mb-2 text-blue-700">
-            <a href="YOUR_PRESENTATION_URL_1" class="hover:underline" target="_blank">Title of Engineering Conference Talk</a>           </h3>
-          <p class="text-gray-700 mb-1 text-sm">Authors/Presenters: Rodd Will, Co-author 1</p>           <p class="text-gray-600 text-sm mb-3">Presented at: Conference Name, City, Country. Date/Year</p>           <p class="text-gray-700 mb-4">
-            Brief summary of the presentation content...           </p>
-                    <div class="space-x-4 text-sm">
-            <a href="YOUR_PRESENTATION_SLIDES_URL_1" class="text-blue-700 hover:underline" target="_blank">Slides</a>             <a href="YOUR_PRESENTATION_VIDEO_URL_1" class="text-blue-700 hover:underline" target="_blank">Video (Optional)</a>           </div>
+                <div id="publication-subfilters" class="secondary-filter-group hidden">
+          <span class="mr-2 font-semibold">Filter Publications:</span>
+          <button data-filter="all-publications" class="filter-btn secondary-filter px-4 py-1 bg-gray-300 text-gray-800 rounded-lg mr-2 hover:bg-gray-400 transition duration-300">All Publications</button>           <button data-filter="journal" class="filter-btn secondary-filter px-4 py-1 bg-gray-200 text-gray-800 rounded-lg mr-2 hover:bg-gray-300 transition duration-300">Journal</button>
+          <button data-filter="conference" class="filter-btn secondary-filter px-4 py-1 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">Conference</button>
         </div>
+    </div>
 
-        <div class="col-span-full text-3xl font-bold mt-8 mb-4 text-blue-800">Applications</div>
 
-                <div id="app1" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-             data-type="application" data-category="health applications web-app api">           <h3 class="font-semibold text-xl mb-2 text-blue-700">Healthcare Diagnostic Web App</h3>           <img src="assets/images/app1-interface.jpg" alt="Healthcare Diagnostic App Interface" class="rounded mb-4 w-full h-64 object-contain border border-gray-300 p-2 bg-gray-50">           <p class="text-gray-700 mb-4">A web-based application utilizing a trained ML model to assist in preliminary diagnostics for a specific health condition based on user input.</p>           <div class="mb-4">
-            <h4 class="font-semibold text-md mb-1 text-gray-800">Uses:</h4>             <p class="text-gray-600 text-sm">Used by clinicians or patients as a screening tool; demonstrates model usability in a front-end environment.</p>           </div>
+            <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <div class="mb-4">
-            <h4 class="font-semibold text-md mb-1 text-gray-800">API/Technical Details:</h4>             <p class="text-gray-600 text-sm">Built with Flask/Django for the backend API, served by a Docker container on AWS EC2. Front-end uses HTML/CSS/JS. The API exposes prediction endpoints.</p>           </div>
+                              <div id="project1" class="work-item project-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            data-type="project" data-category="engineering predictive">
+        <img src="assets/images/project1-thumbnail.jpg" alt="Project 1 Thumbnail" class="rounded mb-4 w-full h-48 object-cover">         <h3 class="font-semibold text-xl mb-2 text-blue-700">Predictive Maintenance System</h3>         <p class="text-gray-700 text-sm mb-3">**Skills:** Time Series Analysis, XGBoost, Python</p>         <p class="text-gray-600 mb-4">Developed a model to predict equipment failure in a manufacturing plant.</p>         <a href="https://github.com/RoddWill" class="text-blue-700 hover:underline mr-4" target="_blank">GitHub</a>         <a href="YOUR_LIVE_DEMO_URL" class="text-blue-700 hover:underline" target="_blank">Demo (Opt)</a>       </div>
 
-                    <div class="space-x-4 text-sm mt-4">
-            <a href="YOUR_APP_DEMO_URL" class="text-blue-700 hover:underline" target="_blank">Live Demo</a>             <a href="YOUR_APP_GITHUB_URL" class="text-blue-700 hover:underline" target="_blank">GitHub Repo</a>                       </div>
+            <div id="publication1" class="work-item publication-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            data-type="publication" data-category="health classification journal research">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700">
+          <a href="YOUR_PUBLICATION_URL_1" class="hover:underline" target="_blank">Healthcare Classification Paper</a>         </h3>
+        <p class="text-gray-700 mb-1 text-sm">Authors: Rodd Will et al.</p>         <p class="text-gray-600 text-sm mb-3">Journal Name, Year</p>         <p class="text-gray-700 mb-4">Summary of the health classification publication...</p>                 <div class="space-x-4 text-sm">
+          <a href="YOUR_PUBLICATION_PDF_URL_1" class="text-blue-700 hover:underline" target="_blank">PDF</a>
         </div>
+      </div>
 
-                <div id="app2" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-             data-type="application" data-category="engineering applications api dashboard">           <h3 class="font-semibold text-xl mb-2 text-blue-700">Industrial Anomaly Detection Dashboard API</h3>           <img src="assets/images/app2-interface.jpg" alt="Industrial Anomaly Detection Dashboard Interface" class="rounded mb-4 w-full h-64 object-contain border border-gray-300 p-2 bg-gray-50">           <p class="text-gray-700 mb-4">An API backend and simple dashboard visualization for real-time anomaly detection from engineering sensor data.</p>           <div class="mb-4">
-            <h4 class="font-semibold text-md mb-1 text-gray-800">Uses:</h4>             <p class="text-gray-600 text-sm">Allows engineers to monitor equipment status and receive alerts on potential anomalies for proactive maintenance.</p>           </div>
-
-          <div class="mb-4">
-            <h4 class="font-semibold text-md mb-1 text-gray-800">API/Technical Details:</h4>             <p class="text-gray-600 text-sm">Uses a Flask API, integrates with a time-series database, and provides data via endpoints consumed by a basic monitoring dashboard.</p>           </div>
-
-                    <div class="space-x-4 text-sm mt-4">
-            <a href="YOUR_APP_DEMO_URL" class="text-blue-700 hover:underline" target="_blank">Live Demo</a>             <a href="YOUR_APP_GITHUB_URL" class="text-blue-700 hover:underline" target="_blank">GitHub Repo</a>           </div>
+            <div id="publication2" class="work-item publication-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            data-type="publication" data-category="engineering predictive conference research">
+        <h3 class="text-xl font-semibold mb-2 text-blue-700">
+          <a href="YOUR_PRESENTATION_URL_1" class="hover:underline" target="_blank">Engineering Predictive Conference Talk</a>         </h3>
+        <p class="text-gray-700 mb-1 text-sm">Authors: Rodd Will et al.</p>         <p class="text-gray-600 text-sm mb-3">Conference Name, Year</p>         <p class="text-gray-700 mb-4">Summary of the engineering predictive presentation...</p>                 <div class="space-x-4 text-sm">
+          <a href="YOUR_PRESENTATION_SLIDES_URL_1" class="text-blue-700 hover:underline" target="_blank">Slides</a>
         </div>
+      </div>
 
 
-                </div>
+            <div id="application1" class="work-item application-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 col-span-1 md:col-span-2 lg:col-span-3"
+            data-type="application" data-category="health classification">         <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/2">
+            <img src="assets/images/application1-interface.jpg" alt="Application 1 Interface" class="rounded mb-4 w-full h-auto object-cover shadow-md">           </div>
+          <div class="md:w-1/2">
+            <h3 class="font-semibold text-2xl mb-3 text-blue-700">AI-Powered Health Risk Classifier Application</h3>             <p class="text-gray-700 mb-4">
+              A web application providing users with a predicted risk score based on their health data input. Built using [Framework/Library].             </p>
+            <p class="text-gray-700 mb-2 font-semibold">API Details:</p>             <p class="text-gray-600 mb-4">
+              The application is backed by a RESTful API developed with [API Framework, e.g., Flask/FastAPI] hosted on [Cloud, e.g., AWS Lambda]. It accepts JSON input and returns classification results and probabilities.             </p>
+            <p class="text-gray-700 mb-2 font-semibold">Use Cases:</p>             <p class="text-gray-600 mb-4">
+              Designed for use by healthcare professionals for preliminary risk assessment or by individuals for personal health monitoring.             </p>
+                         <div class="space-x-4 text-base">
+              <a href="YOUR_APPLICATION_LIVE_URL" class="text-blue-700 hover:underline" target="_blank">Live App</a>
+              <a href="YOUR_APPLICATION_GITHUB_URL" class="text-blue-700 hover:underline" target="_blank">Code</a>
+                           </div>
+          </div>
+        </div>
+      </div>
+
+          </div>
   </section>
 
     <footer class="bg-gray-800 text-gray-200 py-8">
