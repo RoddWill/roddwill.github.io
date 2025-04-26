@@ -6,12 +6,11 @@
   <meta name="description" content="Portfolio of AI/ML projects, publications, and applications focusing on predictive classification in engineering and healthcare." />   <title>Portfolio & Work | AI/ML Engineer</title>   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="bg-gray-100 text-gray-800 overflow-x-hidden">
-    <nav class="bg-white shadow">
+<body class="bg-gray-100 text-gray-800 overflow-x-hidden">     <nav class="bg-white shadow">
     <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-blue-700 mb-4 md:mb-0">YourName</a>       <ul class="flex space-x-4 md:space-x-6">
+      <a href="index.html" class="text-2xl font-bold text-blue-700 mb-4 md:mb-0">RoddWill</a>       <ul class="flex space-x-4 md:space-x-6">
         <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
-        <li><a href="about.html" class="hover:text-blue-700">About</a></li>
+            <li><a href="about.html" class="hover:text-blue-700">About</a></li>
         <li><a href="services.html" class="hover:text-blue-700">Services</a></li>
         <li><a href="portfolio.html" class="hover:text-blue-700">Portfolio</a></li>         <li><a href="blog.html" class="hover:text-blue-700">Blog</a></li>
         <li><a href="faq.html" class="hover:text-blue-700">FAQs</a></li>
@@ -22,44 +21,39 @@
 
     <section class="container mx-auto px-4 py-16">
     <h2 class="text-4xl font-bold mb-8 text-center">My Work</h2>     <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto text-center">
-      Showcasing a combination of my practical projects, research publications, and applications in AIML, focusing on engineering and healthcare domains.
-    </p>
+      Showcasing a combination of my practical projects, research publications, and applications in AIML, focusing on engineering and healthcare domains.     </p>
 
         <div class="mb-8 text-center">
-            <button data-filter="all" class="filter-btn px-6 py-2 bg-blue-700 text-white rounded-lg mr-2 mb-2 hover:bg-blue-800 transition duration-300 font-semibold">All Work</button>       <button data-filter="project" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Projects</button>       <button data-filter="publication" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Publications</button>       <button data-filter="engineering" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Engineering</button>
+            <button data-filter="all" class="filter-btn px-6 py-2 bg-blue-700 text-white rounded-lg mr-2 mb-2 hover:bg-blue-800 transition duration-300 font-semibold">All Work</button>
+      <button data-filter="project" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Projects</button>
+      <button data-filter="publication" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Publications</button>
+      <button data-filter="engineering" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Engineering</button>
       <button data-filter="health" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Healthcare</button>
-      <button data-filter="applications" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Applications</button>     </div>
+      <button data-filter="applications" class="filter-btn px-6 py-2 bg-gray-200 text-gray-800 rounded-lg mr-2 mb-2 hover:bg-gray-300 transition duration-300">Applications</button>
+    </div>
 
-        <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">             <div class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-            data-type="project" data-category="engineering predictive applications">         <img src="assets/images/project1-thumbnail.jpg" alt="Project 1 Thumbnail" class="rounded mb-4 w-full h-48 object-cover">         <h3 class="font-semibold text-xl mb-2 text-blue-700">Predictive Maintenance System for Manufacturing</h3>
-        <p class="text-gray-700 text-sm mb-3">**Skills:** Time Series Analysis, XGBoost, Python, SQL, AWS SageMaker</p>
-        <p class="text-gray-600 mb-4">Developed a model to predict equipment failure in a manufacturing plant based on sensor data, reducing unplanned downtime by 15%.</p>
-        <a href="YOUR_GITHUB_REPO_URL" class="text-blue-700 hover:underline mr-4" target="_blank">GitHub Repo</a>         <a href="YOUR_LIVE_DEMO_URL" class="text-blue-700 hover:underline" target="_blank">Live Demo (Optional)</a>       </div>
+        <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-            data-type="project" data-category="health classification applications">         <img src="assets/images/project2-thumbnail.jpg" alt="Project 2 Thumbnail" class="rounded mb-4 w-full h-48 object-cover">         <h3 class="font-semibold text-xl mb-2 text-blue-700">Patient Risk Stratification for Chronic Disease</h3>
-        <p class="text-gray-700 text-sm mb-3">**Skills:** Binary Classification, Logistic Regression, SVM, scikit-learn, Data Preprocessing, Pandas</p>
-        <p class="text-gray-600 mb-4">Built a classification model to identify patients at high risk of developing a chronic disease based on electronic health records.</p>
-        <a href="YOUR_GITHUB_REPO_URL" class="text-blue-700 hover:underline mr-4" target="_blank">GitHub Repo</a>       </div>
+                  <div id="project1" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            data-type="project" data-category="engineering predictive applications">         <img src="assets/images/project1-thumbnail.jpg" alt="Project 1 Thumbnail" class="rounded mb-4 w-full h-48 object-cover">         <h3 class="font-semibold text-xl mb-2 text-blue-700">Predictive Maintenance System for Manufacturing</h3>         <p class="text-gray-700 text-sm mb-3">**Skills:** Time Series Analysis, XGBoost, Python, SQL, AWS SageMaker</p>         <p class="text-gray-600 mb-4">Developed a model to predict equipment failure in a manufacturing plant based on sensor data, reducing unplanned downtime by 15%.</p>         <a href="YOUR_GITHUB_REPO_URL" class="text-blue-700 hover:underline mr-4" target="_blank">GitHub Repo</a>         <a href="YOUR_LIVE_DEMO_URL" class="text-blue-700 hover:underline" target="_blank">Live Demo (Optional)</a>       </div>
 
-            <div class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            <div id="project2" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            data-type="project" data-category="health classification applications">         <img src="assets/images/project2-thumbnail.jpg" alt="Project 2 Thumbnail" class="rounded mb-4 w-full h-48 object-cover">         <h3 class="font-semibold text-xl mb-2 text-blue-700">Patient Risk Stratification for Chronic Disease</h3>         <p class="text-gray-700 text-sm mb-3">**Skills:** Binary Classification, Logistic Regression, SVM, scikit-learn, Data Preprocessing, Pandas</p>         <p class="text-gray-600 mb-4">Built a classification model to identify patients at high risk of developing a chronic disease based on electronic health records.</p>         <a href="YOUR_GITHUB_REPO_URL" class="text-blue-700 hover:underline mr-4" target="_blank">GitHub Repo</a>       </div>
+
+            <div id="publication1" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
             data-type="publication" data-category="health classification research">         <h3 class="text-xl font-semibold mb-2 text-blue-700">
-          <a href="YOUR_PUBLICATION_URL_1" class="hover:underline" target="_blank">Title of Healthcare Classification Paper</a>
-        </h3>
-        <p class="text-gray-700 mb-1 text-sm">Authors: Your Name, Co-author 1, Co-author 2</p>         <p class="text-gray-600 text-sm mb-3">Published in: Journal Name / Presented at: Conference Name, Date/Year</p>         <p class="text-gray-700 mb-4">
-          Brief summary of the publication, focusing on the classification model and its health application...
-        </p>
+          <a href="YOUR_PUBLICATION_URL_1" class="hover:underline" target="_blank">Title of Healthcare Classification Paper</a>         </h3>
+        <p class="text-gray-700 mb-1 text-sm">Authors: Rodd Will, Co-author 1, Co-author 2</p>         <p class="text-gray-600 text-sm mb-3">Published in: Journal Name / Presented at: Conference Name, Date/Year</p>         <p class="text-gray-700 mb-4">
+          Brief summary of the publication, focusing on the classification model and its health application...         </p>
                 <div class="space-x-4 text-sm">
           <a href="YOUR_PUBLICATION_PDF_URL_1" class="text-blue-700 hover:underline" target="_blank">PDF</a>           <a href="YOUR_PRESENTATION_SLIDES_URL_1" class="text-blue-700 hover:underline" target="_blank">Slides</a>                   </div>
       </div>
 
-            <div class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            <div id="publication2" class="work-item bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
             data-type="publication" data-category="engineering predictive research">         <h3 class="text-xl font-semibold mb-2 text-blue-700">
-          <a href="YOUR_PUBLICATION_URL_2" class="hover:underline" target="_blank">Title of Engineering Predictive Paper</a>
-        </h3>
-        <p class="text-gray-700 mb-1 text-sm">Authors: Your Name, Co-author 1</p>         <p class="text-gray-600 text-sm mb-3">Published in: Journal Name, Date/Year</p>         <p class="text-gray-700 mb-4">
-          Brief summary of the publication, focusing on the predictive model and its engineering application...
-        </p>
+          <a href="YOUR_PUBLICATION_URL_2" class="hover:underline" target="_blank">Title of Engineering Predictive Paper</a>         </h3>
+        <p class="text-gray-700 mb-1 text-sm">Authors: Rodd Will, Co-author 1</p>         <p class="text-gray-600 text-sm mb-3">Published in: Journal Name, Date/Year</p>         <p class="text-gray-700 mb-4">
+          Brief summary of the publication, focusing on the predictive model and its engineering application...         </p>
                 <div class="space-x-4 text-sm">
           <a href="YOUR_PUBLICATION_PDF_URL_2" class="text-blue-700 hover:underline" target="_blank">PDF</a>                   </div>
       </div>
@@ -69,7 +63,7 @@
 
     <footer class="bg-gray-800 text-gray-200 py-8">
     <div class="container mx-auto px-4 text-center">
-      <p>© 2025 YourName. All rights reserved.</p>       <div class="flex justify-center space-x-6 mt-4">
+      <p>© 2025 RoddWill. All rights reserved.</p>       <div class="flex justify-center space-x-6 mt-4">
         <a href="YOUR_GITHUB_URL" class="hover:text-blue-400" target="_blank">GitHub</a>         <a href="YOUR_LINKEDIN_URL" class="hover:text-blue-400" target="_blank">LinkedIn</a>         <a href="mailto:YOUR_EMAIL@example.com" class="hover:text-blue-400">Email</a>         <a href="path/to/your/resume.pdf" class="hover:text-blue-400" download>Resume</a>       </div>
     </div>
   </footer>
