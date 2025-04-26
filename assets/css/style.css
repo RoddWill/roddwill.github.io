@@ -1,30 +1,31 @@
 /* Custom styles go here, supplementing or overriding Tailwind defaults */
 
-/* Basic body styling for font smoothing */
+/* Basic body styling for font smoothing and preventing horizontal overflow */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* overflow-x-hidden; <-- This class is added directly to the body tag in HTML */
 }
-
-/* Add specific styles if needed */
-/* Example: A subtle hover effect for cards not covered by Tailwind utilities */
-/* .project-card:hover {
-  transform: translateY(-5px);
-} */
 
 /* Styling for the FAQ toggle icon */
 .faq-item .faq-question .faq-icon {
   transition: transform 0.3s ease;
+  display: inline-block; /* Ensure transform works correctly */
 }
 
+/* Active state for the FAQ icon - changes '+' to an 'x' visually */
 .faq-item .faq-question.active .faq-icon {
-  transform: rotate(45deg); /* Change + to x when active */
+  transform: rotate(45deg);
 }
 
-/* Add any specific styles for elements that don't have sufficient Tailwind classes */
-/* For instance, if you need a specific gradient or background image not easily done with utilities */
-/* .custom-hero-background {
-  background-image: url('../images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
+/* Add any specific styles needed for elements that don't have sufficient Tailwind classes */
+/* Example: A subtle hover effect for cards not covered by Tailwind utilities */
+/* .work-item:hover {
+  transform: translateY(-5px);
 } */
+
+/* Add custom styles for specific elements if needed */
+/* For instance, if you want a unique border or background for publication cards */
+/* .work-item[data-type="publication"] {
+  border-left: 4px solid #3b82f6; /* Tailwind blue-500 */
+/* } */
