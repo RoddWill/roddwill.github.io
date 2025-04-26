@@ -1,79 +1,57 @@
-// Custom JavaScript goes here
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  // --- FAQ Toggle Functionality ---
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    const icon = item.querySelector('.faq-icon'); // Get the icon element
-
-    question.addEventListener('click', () => {
-      // Close all other open answers
-      faqItems.forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.querySelector('.faq-answer').classList.add('hidden');
-          otherItem.querySelector('.faq-question').classList.remove('active'); // Remove active class
-          otherItem.querySelector('.faq-icon').textContent = '+'; // Reset icon
-          otherItem.querySelector('.faq-icon').classList.remove('active');
-        }
-      });
-
-      // Toggle the clicked answer
-      answer.classList.toggle('hidden');
-      question.classList.toggle('active'); // Add/remove active class for styling
-      icon.classList.toggle('active');
-
-      // Change the icon based on the state
-      if (question.classList.contains('active')) {
-        icon.textContent = 'x'; // Change to 'x' when open
-      } else {
-        icon.textContent = '+'; // Change back to '+' when closed
-      }
-    });
-  });
-
-
-  // --- Portfolio Filtering Functionality (Basic Example) ---
-  // This is a simple client-side filter. For large portfolios,
-  // server-side rendering or a static site generator might be better.
+// --- Portfolio/Work Filtering Functionality ---
+  // This is a simple client-side filter.
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  // Changed selector to target items within the updated grid ID and class
+  const workItems = document.querySelectorAll('#work-grid .work-item');
 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
+      const filter = button.getAttribute('data-filter'); // e.g., 'all', 'project', 'publication', 'engineering', 'health', 'applications'
 
-      // Update active button style (basic example)
+      // Update active button style
       filterButtons.forEach(btn => {
-        btn.classList.remove('bg-blue-600', 'text-white');
-        btn.classList.add('bg-gray-200', 'text-gray-800');
+        btn.classList.remove('bg-blue-700', 'text-white', 'hover:bg-blue-800');
+        btn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+        btn.classList.remove('font-semibold');
       });
-      button.classList.add('bg-blue-600', 'text-white');
-      button.classList.remove('bg-gray-200', 'text-gray-800');
+      button.classList.add('bg-blue-700', 'text-white', 'font-semibold', 'hover:bg-blue-800');
+      button.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
 
 
-      projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
+      workItems.forEach(item => {
+        const itemCategories = item.getAttribute('data-category'); // e.g., "engineering predictive applications"
+        const itemType = item.getAttribute('data-type'); // e.g., "project" or "publication"
 
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'block'; // Or use Tailwind 'block' class
+        let showItem = false;
+
+        if (filter === 'all') {
+          showItem = true;
+        } else if (filter === 'project' || filter === 'publication') {
+          // Filter by type
+          showItem = (itemType === filter);
+        } else if (itemCategories) {
+          // Filter by category - check if the filter is one of the item's categories
+          const categoriesArray = itemCategories.split(' '); // Split string into array
+          showItem = categoriesArray.includes(filter);
+        }
+
+        if (showItem) {
+          item.style.display = 'block'; // Use 'block' for grid items
         } else {
-          card.style.display = 'none'; // Or use Tailwind 'hidden' class
+          item.style.display = 'none'; // Use 'none' to hide
         }
       });
     });
   });
 
-  // Trigger the 'All' filter on page load to show all projects initially
-  const allFilterButton = document.querySelector('.filter-btn[data-filter="all"]');
-  if (allFilterButton) {
-    allFilterButton.click();
-  }
+  // Trigger the 'All' filter on page load to show all items initially
+  // Use a slight delay to ensure the grid is rendered before filtering
+  setTimeout(() => {
+    const allFilterButton = document.querySelector('.filter-btn[data-filter="all"]');
+    if (allFilterButton) {
+      allFilterButton.click();
+    }
+  }, 50); // Small delay
 
 
-});
-
-// Add any other global JavaScript functions here
+}); // End DOMContentLoaded
