@@ -1,9 +1,9 @@
 /* Custom styles go here, supplementing Bootstrap defaults */
 
-/* Reduce the height of the hero carousel images */
+/* Increase the height of the hero carousel images slightly */
 .hero-carousel-img {
-    height: 60vh; /* 60% of the viewport height */
-    /* You can adjust this value (e.g., 400px, 50vh, etc.) */
+    height: 70vh; /* 70% of the viewport height */
+    /* You can adjust this value further (e.g., 500px, 80vh, etc.) */
     object-fit: cover; /* Ensure images cover the area */
 }
 
@@ -23,6 +23,15 @@
     border: 0;
 }
 
+/* Hide sub-filter groups by default on the Portfolio page */
+.sub-filters {
+    display: none;
+}
+
+/* Style for header social/contact links on hover */
+.hover-primary:hover {
+    color: var(--bs-primary) !important; /* Use Bootstrap's primary color variable */
+}
 
 /* Example: Style for the logo image in the navbar if needed */
 .navbar-brand img {
@@ -33,12 +42,23 @@
 /* .layout-debugger { ... } */
 
 /* Add custom styles for filter buttons if needed (e.g., active state) */
-/* .filter-btn.active {
+/* Bootstrap's `.btn-primary.active` or `.btn-secondary.active` etc. handle the color change when active */
+/* If you need custom active styles beyond Bootstrap's defaults, add them here:
+.filter-btn.active {
     // Add styles for active button, e.g.,
-    // background-color: #0d6efd !important; // Bootstrap primary blue
-    // color: white !important;
-    // border-color: #0d6efd !important;
-} */
+    // font-weight: bold;
+    // text-decoration: underline;
+}
+*/
 
 
 /* You can add custom styles here for specific elements or overrides */
+/* For example, to change Bootstrap's primary/secondary/etc colors globally:
+:root {
+  --bs-primary: #0056b3; // A professional blue
+  --bs-secondary: #6c757d; // Bootstrap's default grey
+  --bs-success: #28a745; // Bootstrap's default green
+  --bs-info: #17a2b8; // Bootstrap's default cyan
+  // etc.
+}
+*/
