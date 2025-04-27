@@ -8,6 +8,24 @@ body {
   overflow-x: hidden;
 }
 
+/* --- Layout Debugger Style (Remove this once layout is correct) --- */
+.layout-debugger {
+  display: block; /* Show on mobile by default */
+}
+
+/* Hide the debugger on screens md and larger */
+@media (min-width: 768px) { /* Tailwind's md breakpoint */
+  .layout-debugger {
+    display: none;
+    /* Change background/text color here to indicate breakpoint hit if desired */
+    /* background-color: #34d399; /* Tailwind green-500 */
+    /* color: #fff; */
+    /* content: "Desktop Layout (>= 768px)"; */
+  }
+}
+/* --- End Layout Debugger Style --- */
+
+
 /* --- Styles for Contact Page Map --- */
 /* Container to maintain aspect ratio for the embedded map */
 .map-container {
