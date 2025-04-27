@@ -8,6 +8,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+   <style>
+        /* Custom style for the map iframe to ensure responsiveness */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 75%; /* Aspect ratio 4:3. Use 56.25% for 16:9 */
+            height: 0;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
@@ -23,47 +40,80 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About / CV</a></li>
-          <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li> <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <main class="container py-5">
-    <h1 class="fw-bold mb-4" data-aos="fade-up">Contact Me</h1>
+    <h1 class="fw-bold mb-4 text-center" data-aos="fade-up">Contact Me</h1>
 
     <div class="row justify-content-center">
-        <div class="col-lg-8">
-             <p class="lead text-center mb-4" data-aos="fade-up">
-                Have a question, a project idea, or just want to connect? Feel free to reach out using the form below.
+        <div class="col-lg-10"> <p class="lead text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+                Have a question, a project idea, or just want to connect? Reach out via the form or find me using the details below.
              </p>
 
-            <form data-aos="fade-up" action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST"> <div class="mb-3">
-                    <label for="name" class="form-label">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold mb-4">Send a Message</h3>
+                            <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST"> <div class="mb-3">
+                                    <label for="name" class="form-label">Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject (Optional):</label>
+                                    <input type="text" class="form-control" id="subject" name="subject">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message:</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                 <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                 <div class="mb-3">
-                    <label for="subject" class="form-label">Subject (Optional):</label>
-                    <input type="text" class="form-control" id="subject" name="subject">
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message:</label>
-                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                </div>
-            </form>
 
-             </div>
+                 <div class="col-md-6" data-aos="fade-left">
+                    <div class="card h-100">
+                         <div class="card-body">
+                            <h3 class="card-title fw-bold mb-4">Contact Details</h3>
+                            <div class="mb-4">
+                                <p><i class="fas fa-envelope me-2"></i> Email: <a href="mailto:you@example.com">you@example.com</a></p>
+                                <p><i class="fas fa-map-marker-alt me-2"></i> Location: London, UK</p>
+                                <p><i class="fas fa-phone me-2"></i> Phone: <a href="tel:YOUR_PHONE_NUMBER">YOUR_PHONE_NUMBER</a></p> <p><i class="fab fa-linkedin me-2"></i> LinkedIn: <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer">Your LinkedIn</a></p>
+                                <p><i class="fab fa-github me-2"></i> GitHub: <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer">Your GitHub</a></p>
+                                </div>
+
+                            <h3 class="card-title fw-bold mb-3">My Location</h3>
+                             <div class="map-container rounded shadow-sm">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19866.027354953326!2d-0.149436121779139!3d51.50301651576388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2suk!4v1714236016516!5m2!1sen!2suk"
+                                    width="600"
+                                    height="450"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
 
