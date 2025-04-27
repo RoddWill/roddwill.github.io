@@ -1,9 +1,56 @@
-// Custom JavaScript for Portfolio Filtering and FAQ Toggle
+// Custom JavaScript goes here
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Theme Switcher Functionality ---
+  const themeSelect = document.getElementById('theme-select');
+  const htmlElement = document.documentElement; // The <html> element
+
+  // Function to apply the selected theme
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      htmlElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else if (theme === 'light') {
+      htmlElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else { // theme === 'auto'
+      // Check system preference
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+      localStorage.removeItem('theme'); // Remove stored preference to default to system
+    }
+    // Update the select dropdown to match the applied theme
+    themeSelect.value = theme;
+  }
+
+  // On page load:
+  // 1. Check local storage for a saved theme preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme); // Apply saved theme
+  } else {
+    // 2. If no saved theme, apply 'auto' based on system preference
+    applyTheme('auto');
+  }
+
+  // Listen for changes in the select dropdown
+  themeSelect.addEventListener('change', (event) => {
+    applyTheme(event.target.value);
+  });
+
+  // Listen for changes in the system's color scheme preference (only applies if theme is 'auto')
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+    if (!localStorage.getItem('theme')) { // Only react if theme is set to 'auto'
+      applyTheme('auto'); // Re-apply auto theme based on new system preference
+    }
+  });
+
   // --- FAQ Toggle Functionality ---
-  // This section remains the same as before
+  // ... (Keep the existing FAQ toggle script code here) ...
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach(item => {
@@ -12,9 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = item.querySelector('.faq-icon');
 
     question.addEventListener('click', () => {
+      // Optional: Close all other open answers before opening the clicked one
+      /*
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.faq-answer').classList.add('hidden');
+          otherItem.querySelector('.faq-question').classList.remove('active');
+          otherItem.querySelector('.faq-icon').textContent = '+';
+          otherItem.querySelector('.faq-icon').classList.remove('active');
+        }
+      });
+      */
+
+      // Toggle the clicked answer visibility
       answer.classList.toggle('hidden');
+
+      // Toggle active class on question for styling (e.g., bold text)
       question.classList.toggle('active');
 
+      // Toggle icon appearance ('+' / 'x')
       if (question.classList.contains('active')) {
         icon.textContent = 'x';
       } else {
@@ -24,145 +87,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
   // --- Portfolio/Work Filtering Functionality ---
-  const primaryFilterButtons = document.querySelectorAll('.primary-filter');
-  const secondaryFilterGroups = document.querySelectorAll('.secondary-filter-group');
-  const secondaryFilterButtons = document.querySelectorAll('.secondary-filter'); // Select all secondary buttons
-  const workItems = document.querySelectorAll('.work-item'); // Select all work items
+  // ... (Keep the existing Portfolio Filtering script code here) ...
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const workItems = document.querySelectorAll('#work-grid .work-item');
 
-  let activePrimaryFilter = 'all'; // Track the currently active primary filter
-  let activeSecondaryFilter = 'all'; // Track the currently active secondary filter within a group
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
 
-  // Function to update button styles
-  const updateButtonStyles = (buttons, activeFilter) => {
-    buttons.forEach(btn => {
-      if (btn.getAttribute('data-filter') === activeFilter) {
-        btn.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
-        btn.classList.add('bg-blue-700', 'text-white', 'font-semibold', 'hover:bg-blue-800');
-      } else {
-        btn.classList.remove('bg-blue-700', 'text-white', 'font-semibold', 'hover:bg-blue-800');
-        // Handle specific gray for secondary 'All' buttons
-        if (btn.classList.contains('bg-gray-300')) {
-          btn.classList.add('bg-gray-300', 'text-gray-800', 'hover:bg-gray-400');
-        } else {
-          btn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
-        }
-      }
-    });
-  };
+      // Update active button style
+      filterButtons.forEach(btn => {
+        // Ensure correct colors are toggled based on theme
+        btn.classList.remove('bg-blue-700', 'text-white', 'hover:bg-blue-800', 'dark:bg-blue-400', 'dark:text-gray-900', 'dark:hover:bg-blue-500');
+        btn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300', 'dark:bg-gray-700', 'dark:text-gray-200', 'dark:hover:bg-gray-600');
+        btn.classList.remove('font-semibold');
+      });
+      // Ensure correct colors are added to the active button
+      button.classList.add('bg-blue-700', 'text-white', 'font-semibold', 'hover:bg-blue-800', 'dark:bg-blue-400', 'dark:text-gray-900', 'dark:hover:bg-blue-500');
+      button.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300', 'dark:bg-gray-700', 'dark:text-gray-200', 'dark:hover:bg-gray-600');
 
-  // Function to filter work items
-  const filterWorkItems = () => {
-    workItems.forEach(item => {
-      const itemType = item.getAttribute('data-type');
-      const itemCategoriesString = item.getAttribute('data-category') || '';
-      const itemCategoriesArray = itemCategoriesString.split(' ').filter(Boolean);
 
-      let showItem = false;
+      workItems.forEach(item => {
+        const itemCategories = item.getAttribute('data-category');
+        const itemType = item.getAttribute('data-type');
 
-      // Step 1: Filter by Primary Type
-      const matchesPrimary = (activePrimaryFilter === 'all') || (itemType === activePrimaryFilter);
+        let showItem = false;
 
-      if (matchesPrimary) {
-        // Step 2: Apply Secondary Filter (if applicable)
-        if (activePrimaryFilter === 'project' || activePrimaryFilter === 'publication') {
-          // Check secondary filter within the active group
-          if (activeSecondaryFilter.startsWith('all-')) { // 'all-projects' or 'all-publications'
-            showItem = true; // Show all items of this type
-          } else { // Filter by specific category (engineering, health, journal, conference)
-            showItem = itemCategoriesArray.includes(activeSecondaryFilter);
-          }
-        } else if (activePrimaryFilter === 'application') {
-          // Applications view - no secondary filtering applied here based on current design
+        if (filter === 'all') {
           showItem = true;
-        } else { // 'all' primary filter
-          showItem = true; // Show all items
+        } else if (filter === 'project' || filter === 'publication') {
+          showItem = (itemType === filter);
+        } else if (itemCategories) {
+          const categoriesArray = itemCategories.split(' ');
+          showItem = categoriesArray.includes(filter);
         }
-      }
 
-      // Toggle visibility
-      if (showItem) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-
-    // Adjust layout for application items when 'application' filter is active
-    const applicationItems = document.querySelectorAll('.application-item');
-    applicationItems.forEach(item => {
-      if (activePrimaryFilter === 'application') {
-        // Apply wide column span for application layout
-        item.classList.remove('md:col-span-2', 'lg:col-span-3'); // Remove potential previous spans
-        item.classList.add('col-span-1', 'md:col-span-2', 'lg:col-span-3'); // Make it span across columns
-      } else {
-        // Reset to default grid behavior (or hide if not shown by filter)
-        item.classList.remove('col-span-1', 'md:col-span-2', 'lg:col-span-3');
-        // Re-apply default grid classes if you had them originally
-        // item.classList.add('col-span-1', 'md:col-span-X', 'lg:col-span-Y'); // Add back default span if needed
-      }
-    });
-  };
-
-  // Event listeners for primary filter buttons
-  primaryFilterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      activePrimaryFilter = button.getAttribute('data-filter');
-
-      // Hide all secondary filter groups
-      secondaryFilterGroups.forEach(group => group.classList.add('hidden'));
-
-      // Show the relevant secondary filter group and activate its default filter
-      if (activePrimaryFilter === 'project') {
-        document.getElementById('secondary-filters').classList.remove('hidden');
-        document.getElementById('project-subfilters').classList.remove('hidden');
-        activeSecondaryFilter = 'all-projects'; // Set default secondary filter
-        updateButtonStyles(document.querySelectorAll('#project-subfilters .secondary-filter'), activeSecondaryFilter); // Update secondary button styles
-      } else if (activePrimaryFilter === 'publication') {
-        document.getElementById('secondary-filters').classList.remove('hidden');
-        document.getElementById('publication-subfilters').classList.remove('hidden');
-        activeSecondaryFilter = 'all-publications'; // Set default secondary filter
-        updateButtonStyles(document.querySelectorAll('#publication-subfilters .secondary-filter'), activeSecondaryFilter); // Update secondary button styles
-      } else {
-        document.getElementById('secondary-filters').classList.add('hidden');
-        activeSecondaryFilter = 'all'; // No secondary filter active for 'all' or 'application'
-      }
-
-      // Update primary button styles
-      updateButtonStyles(primaryFilterButtons, activePrimaryFilter);
-
-      // Apply filtering
-      filterWorkItems();
+        if (showItem) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
     });
   });
 
-  // Event listeners for secondary filter buttons
-  secondaryFilterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      activeSecondaryFilter = button.getAttribute('data-filter');
-
-      // Update secondary button styles within the active group
-      // Find the parent secondary filter group to only update buttons within that group
-      const parentGroup = button.closest('.secondary-filter-group');
-      if (parentGroup) {
-        updateButtonStyles(parentGroup.querySelectorAll('.secondary-filter'), activeSecondaryFilter);
-      }
-
-
-      // Apply filtering (re-applies primary filter and the new secondary filter)
-      filterWorkItems();
-    });
-  });
-
-
-  // Trigger the default primary filter ('all') on page load
+  // Trigger the 'All' filter on page load
   setTimeout(() => {
-    const defaultFilterButton = document.querySelector('.primary-filter[data-filter="all"]');
-    if (defaultFilterButton) {
-      defaultFilterButton.click();
+    const allFilterButton = document.querySelector('.filter-btn[data-filter="all"]');
+    if (allFilterButton) {
+      allFilterButton.click();
     }
-  }, 50); // Small delay
+  }, 50);
 
 
 }); // End DOMContentLoaded
