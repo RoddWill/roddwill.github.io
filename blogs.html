@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="bg-light py-2 border-bottom"> <div class="container text-center text-secondary"> <a href="mailto:you@example.com" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fas fa-envelope me-1"></i> <span class="d-none d-md-inline">Email</span></a> <a href="#" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-google-scholar me-1"></i> <span class="d-none d-md-inline">Scholar</span></a> <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-github me-1"></i> <span class="d-none d-md-inline">GitHub</span></a> <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-linkedin me-1"></i> <span class="d-none d-md-inline">LinkedIn</span></a> <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-twitter me-1"></i> <span class="d-none d-md-inline">Twitter</span></a> <a href="YOUR_MEDIUM_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-medium me-1"></i> <span class="d-none d-md-inline">Medium</span></a> </div>
+  <header class="bg-light py-2 border-bottom"> <div class="container text-center text-secondary"> <a href="mailto:you@example.com" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fas fa-envelope me-1"></i> <span class="d-none d-md-inline">Email</span></a> <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-google-scholar me-1"></i> <span class="d-none d-md-inline">Scholar</span></a> <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-github me-1"></i> <span class="d-none d-md-inline">GitHub</span></a> <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-linkedin me-1"></i> <span class="d-none d-md-inline">LinkedIn</span></a> <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-twitter me-1"></i> <span class="d-none d-md-inline">Twitter</span></a> <a href="YOUR_MEDIUM_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-medium me-1"></i> <span class="d-none d-md-inline">Medium</span></a> </div>
   </header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
@@ -26,7 +26,10 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About / CV</a></li>
-          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li> <li class="nav-item"><a class="nav-link active" aria-current="page" href="blogs.html">Blogs</a></li> <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li> <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -37,22 +40,63 @@
 
     <div class="row justify-content-center">
         <div class="col-lg-8">
+            <div class="card bg-light mb-4" data-aos="fade-up">
+                <div class="card-body">
+                    <h4 class="card-title fw-bold mb-3">Table of Contents</h4>
+                    <ul class="list-unstyled blog-toc">
+                        <li><a href="#post1">Title of Your Blog Post 1</a></li>
+                        <li><a href="#post2">Title of Your Blog Post 2</a></li>
+                        <li><a href="#post3">Title of Your Blog Post 3</a></li>
+                        <li><a href="#post4">Title of Your Blog Post 4</a></li>
+                        <li><a href="#post5">Title of Your Blog Post 5</a></li>
+                        <li><a href="#post6">Title of Your Blog Post 6</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action" data-aos="fade-up">
-                    <div class="d-flex w-100 justify-content-between">
+                <a href="#" id="post1" class="list-group-item list-group-item-action" data-aos="fade-up"> <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1 fw-bold">Title of Your Blog Post 1</h5>
                         <small class="text-muted">Date (e.g., 2025-04-27)</small>
                     </div>
                     <p class="mb-1">Brief excerpt or introduction to the blog post...</p>
                     <small>[Tags, e.g., #MachineLearning #Healthcare]</small>
                 </a>
-                 <a href="#" class="list-group-item list-group-item-action" data-aos="fade-up" data-aos-delay="100">
-                    <div class="d-flex w-100 justify-content-between">
+                 <a href="#" id="post2" class="list-group-item list-group-item-action" data-aos="fade-up" data-aos-delay="100"> <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1 fw-bold">Title of Your Blog Post 2</h5>
                         <small class="text-muted">Date (e.g., 2025-04-20)</small>
                     </div>
                     <p class="mb-1">Brief excerpt or introduction to the blog post...</p>
                     <small>[Tags, e.g., #Engineering #MLOps]</small>
+                </a>
+                 <a href="#" id="post3" class="list-group-item list-group-item-action" data-aos="fade-up" data-aos-delay="150"> <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1 fw-bold">Title of Your Blog Post 3</h5>
+                        <small class="text-muted">Date (e.g., 2025-04-15)</small>
+                    </div>
+                    <p class="mb-1">Brief excerpt or introduction to the blog post...</p>
+                    <small>[Tags, e.g., #ComputerVision]</small>
+                </a>
+                 <a href="#" id="post4" class="list-group-item list-group-item-action" data-aos="fade-up" data-aos-delay="200"> <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1 fw-bold">Title of Your Blog Post 4</h5>
+                        <small class="text-muted">Date (e.g., 2025-04-08)</small>
+                    </div>
+                    <p class="mb-1">Brief excerpt or introduction to the blog post...</p>
+                    <small>[Tags, e.g., #NLP #Healthcare]</small>
+                </a>
+                 <a href="#" id="post5" class="list-group-item list-group-item-action" data-aos="fade-up" data-aos-delay="250"> <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1 fw-bold">Title of Your Blog Post 5</h5>
+                        <small class="text-muted">Date (e.g., 2025-04-01)</small>
+                    </div>
+                    <p class="mb-1">Brief excerpt or introduction to the blog post...</p>
+                    <small>[Tags, e.g., #MLOps]</small>
+                </a>
+                 <a href="#" id="post6" class="list-group-item list-group-item-action" data-aos="fade-up" data-aos-delay="300"> <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1 fw-bold">Title of Your Blog Post 6</h5>
+                        <small class="text-muted">Date (e.g., 2025-03-25)</small>
+                    </div>
+                    <p class="mb-1">Brief excerpt or introduction to the blog post...</p>
+                    <small>[Tags, e.g., #Engineering #Data]</small>
                 </a>
                 </div>
         </div>
