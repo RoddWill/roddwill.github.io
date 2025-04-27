@@ -8,77 +8,140 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Portfolio Filtering Functionality ---
     function initPortfolioFiltering() {
-        const filterButtons = document.querySelectorAll('#work-grid-section .filter-btn'); // Target buttons within the portfolio section
+        const filterButtons = document.querySelectorAll('#work-grid-section .filter-btn'); // Get all filter buttons
+        const mainFilterButtons = document.querySelectorAll('#work-grid-section .filter-btn.main-filter'); // Get main filter buttons
+        const subFilterGroups = document.querySelectorAll('#work-grid-section .sub-filters'); // Get all sub-filter containers
         const workGrid = document.getElementById('work-grid');
-        const workItems = workGrid ? workGrid.querySelectorAll('.col.work-item') : []; // Target the column div containing the card
+        const workItems = workGrid ? workGrid.querySelectorAll('.col.work-item') : []; // Get all work item columns
 
-        // Exit if no work items or buttons found
-        if (!workItems.length || !filterButtons.length) {
+        // Exit if elements not found
+        if (!workItems.length || !filterButtons.length || !workGrid) {
             console.warn("Portfolio filtering elements or work items not found.");
             return;
         }
 
+        // Function to update button active state
+        function updateButtonActiveState(activeButton) {
+             filterButtons.forEach(btn => {
+                 // Remove all active/color classes
+                 btn.classList.remove('active', 'btn-primary', 'btn-secondary', 'btn-success', 'btn-info');
+                 // Re-add appropriate outline classes based on their filter group
+                 if (btn.getAttribute('data-filter-group') === 'main') btn.classList.add('btn-outline-secondary');
+                 else if (btn.getAttribute('data-filter-group') === 'projects' || btn.getAttribute('data-filter-group') === 'applications') btn.classList.add('btn-outline-success');
+                 else if (btn.getAttribute('data-filter-group') === 'publications') btn.classList.add('btn-outline-info');
+
+                  // Special case for 'All Work' button
+                 if (btn.getAttribute('data-filter') === 'all') btn.classList.remove('btn-outline-secondary'); // Remove secondary outline
+                 if (btn.getAttribute('data-filter') === 'all') btn.classList.add('btn-outline-primary'); // Keep 'All Work' outline primary when not active
+             });
+
+            // Set the active button style
+            if (activeButton) {
+                 activeButton.classList.add('active');
+                 // Remove outline class from the active button
+                 if (activeButton.classList.contains('btn-outline-primary')) activeButton.classList.remove('btn-outline-primary');
+                 else if (activeButton.classList.contains('btn-outline-secondary')) activeButton.classList.remove('btn-outline-secondary');
+                 else if (activeButton.classList.contains('btn-outline-success')) activeButton.classList.remove('btn-outline-success');
+                 else if (activeButton.classList.contains('btn-outline-info')) activeButton.classList.remove('btn-outline-info');
+
+
+                 // Add the solid color class based on the button's filter group or value
+                 if (activeButton.getAttribute('data-filter') === 'all') activeButton.classList.add('btn-primary'); // 'All Work' becomes primary solid
+                 else if (activeButton.getAttribute('data-filter-group') === 'main') activeButton.classList.add('btn-secondary'); // Main filters become secondary solid
+                 else if (activeButton.getAttribute('data-filter-group') === 'projects' || activeButton.getAttribute('data-filter-group') === 'applications') activeButton.classList.add('btn-success'); // Project/Application sub-filters become success solid
+                 else if (activeButton.getAttribute('data-filter-group') === 'publications') activeButton.classList.add('btn-info'); // Publication sub-filters become info solid
+
+            }
+        }
+
+
+        // Function to filter work items and manage sub-filters visibility
+        function filterWorkItemsAndSubFilters(filterValue, filterGroup) {
+             workItems.forEach(item => {
+                const itemType = item.getAttribute('data-type');
+                const itemCategories = item.getAttribute('data-category');
+
+                let showItem = false;
+
+                switch (filterValue) {
+                    case 'all':
+                        showItem = true;
+                        break;
+                    case 'project':
+                    case 'publication':
+                    case 'application':
+                         // If a main type filter is clicked, show items matching that type
+                        showItem = (itemType === filterValue);
+                        break;
+                    // Sub-filters - check if the category is present in the item's categories
+                    case 'engineering':
+                    case 'healthcare':
+                    case 'journals':
+                    case 'conferences':
+                         if (itemCategories) {
+                            const categoriesArray = itemCategories.split(' ');
+                            showItem = categoriesArray.includes(filterValue);
+                        }
+                        break;
+                    default:
+                        showItem = true; // Fallback to showing all
+                }
+
+                 // Toggle visibility using Bootstrap's d-none for better performance with AOS
+                 if (showItem) {
+                    item.classList.remove('d-none');
+                 } else {
+                     item.classList.add('d-none');
+                 }
+            });
+
+            // Manage sub-filter button group visibility
+            subFilterGroups.forEach(group => {
+                // Hide all sub-filter groups initially
+                 group.style.display = 'none';
+             });
+
+             // Determine which main filter is currently active (or was just clicked)
+             let activeMainFilter = 'all';
+             mainFilterButtons.forEach(btn => {
+                 if (btn.classList.contains('active')) {
+                     activeMainFilter = btn.getAttribute('data-filter');
+                 }
+             });
+
+
+             // Show the relevant sub-filter group based on the active main filter
+             if (activeMainFilter === 'project') {
+                 document.getElementById('project-subfilters').style.display = 'block';
+             } else if (activeMainFilter === 'publication') {
+                 document.getElementById('publication-subfilters').style.display = 'block';
+             } else if (activeMainFilter === 'application') {
+                 // Assuming Engineering/Healthcare also apply to Applications, show that group
+                 document.getElementById('project-subfilters').style.display = 'block';
+             }
+             // Note: If a sub-filter was clicked *directly* (e.g. via history/bookmark if state was saved),
+             // the logic above correctly shows the parent group based on the active main filter state.
+
+
+             // Re-initialize AOS after filtering to animate visible items
+             // Note: AOS might not re-animate elements already in view that were hidden/shown.
+             // For true re-animation, you might need to remove/re-add elements or use more advanced techniques.
+             setTimeout(() => { // Small delay helps ensure display changes are processed
+                 AOS.refresh();
+             }, 50);
+        }
+
+        // Add click listeners to all filter buttons
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                const filterValue = button.getAttribute('data-filter'); // e.g., 'all', 'project', 'engineering', 'journals', etc.
+                const filterValue = button.getAttribute('data-filter');
+                const filterGroup = button.getAttribute('data-filter-group');
 
-                // Update active button style (using Bootstrap's .active class)
-                filterButtons.forEach(btn => {
-                     btn.classList.remove('active', 'btn-primary');
-                     // Re-add appropriate outline classes if you want them to revert visually
-                     if (btn.classList.contains('btn-outline-secondary')) btn.classList.add('btn-outline-secondary');
-                     else if (btn.classList.contains('btn-outline-success')) btn.classList.add('btn-outline-success');
-                     else if (btn.classList.contains('btn-outline-info')) btn.classList.add('btn-outline-info');
-                     else if (btn.classList.contains('btn-outline-primary')) btn.classList.add('btn-outline-primary');
+                 // Update active state for buttons
+                 updateButtonActiveState(button);
 
-                });
-                button.classList.add('active', 'btn-primary'); // Apply active style
-
-
-                workItems.forEach(item => {
-                    const itemType = item.getAttribute('data-type'); // 'project', 'publication', 'application'
-                    const itemCategories = item.getAttribute('data-category'); // e.g., "engineering applications"
-
-                    let showItem = false;
-
-                    switch (filterValue) {
-                        case 'all':
-                            showItem = true;
-                            break;
-                        case 'project':
-                        case 'publication':
-                        case 'application':
-                            // Filter by specific type (All Projects, All Publications, All Applications)
-                            showItem = (itemType === filterValue);
-                            break;
-                        case 'engineering':
-                        case 'healthcare':
-                        case 'journals':
-                        case 'conferences':
-                            // Filter by specific category (Engineering, Healthcare, Journals, Conferences)
-                            if (itemCategories) {
-                                const categoriesArray = itemCategories.split(' '); // Split string into array
-                                showItem = categoriesArray.includes(filterValue);
-                            }
-                            break;
-                        default:
-                            showItem = true; // Default to showing everything if filter is unknown
-                    }
-
-                    // Toggle item visibility using Bootstrap's d-none utility or direct style
-                    if (showItem) {
-                        item.style.display = 'block'; // Use block to override Bootstrap's d-none if present
-                         // item.classList.remove('d-none'); // Alternative using Bootstrap class
-                    } else {
-                         item.style.display = 'none'; // Hide the element
-                        // item.classList.add('d-none'); // Alternative using Bootstrap class
-                    }
-                });
-
-                 // Optional: Re-initialize AOS after filtering to animate visible items
-                 // Note: AOS might not re-animate elements already in view that were hidden/shown.
-                 // You might need a more complex approach if you require re-animation on filter change.
-                 // AOS.refresh();
+                 // Apply item filtering and manage sub-filters visibility
+                 filterWorkItemsAndSubFilters(filterValue, filterGroup);
             });
         });
 
@@ -93,13 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize Portfolio Filtering if on the portfolio page
-    if (document.getElementById('work-grid')) {
+    if (document.getElementById('work-grid-section')) { // Check for the section container ID
          initPortfolioFiltering();
     }
 
 
     // --- FAQ Toggle Functionality (Bootstrap's JS handles this via data-bs-toggle="collapse") ---
     // No custom JS needed if using Bootstrap's built-in Accordion component.
+    // Ensure your FAQ HTML uses data-bs-toggle and data-bs-target correctly.
 
 
     // --- Other Custom JS (Keep existing if you had it) ---
