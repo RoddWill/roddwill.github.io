@@ -31,8 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
                  else if (btn.getAttribute('data-filter-group') === 'publications') btn.classList.add('btn-outline-info');
 
                   // Special case for 'All Work' button
-                 if (btn.getAttribute('data-filter') === 'all') btn.classList.remove('btn-outline-secondary'); // Remove secondary outline
-                 if (btn.getAttribute('data-filter') === 'all') btn.classList.add('btn-outline-primary'); // Keep 'All Work' outline primary when not active
+                 if (btn.getAttribute('data-filter') === 'all') {
+                     btn.classList.remove('btn-outline-secondary'); // Remove secondary outline
+                     btn.classList.add('btn-outline-primary'); // Keep 'All Work' outline primary when not active
+                 }
              });
 
             // Set the active button style
@@ -59,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function filterWorkItemsAndSubFilters(filterValue, filterGroup) {
              workItems.forEach(item => {
                 const itemType = item.getAttribute('data-type');
-                const itemCategories = item.getAttribute('data-category');
+                const itemCategories = item.getAttribute('data-category'); // e.g., "engineering applications"
 
                 let showItem = false;
 
@@ -101,26 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
                  group.style.display = 'none';
              });
 
-             // Determine which main filter is currently active (or was just clicked)
-             let activeMainFilter = 'all';
-             mainFilterButtons.forEach(btn => {
-                 if (btn.classList.contains('active')) {
-                     activeMainFilter = btn.getAttribute('data-filter');
-                 }
-             });
-
-
-             // Show the relevant sub-filter group based on the active main filter
-             if (activeMainFilter === 'project') {
+             // Show the relevant sub-filter group based on the *main* filter clicked
+             // Note: This logic assumes that clicking a main filter button (project, publication, application)
+             // should reveal its corresponding sub-filters. Clicking 'All Work' hides all sub-filters.
+             if (filterValue === 'project') {
                  document.getElementById('project-subfilters').style.display = 'block';
-             } else if (activeMainFilter === 'publication') {
+             } else if (filterValue === 'publication') {
                  document.getElementById('publication-subfilters').style.display = 'block';
-             } else if (activeMainFilter === 'application') {
+             } else if (filterValue === 'application') {
                  // Assuming Engineering/Healthcare also apply to Applications, show that group
-                 document.getElementById('project-subfilters').style.display = 'block';
+                 document.getElementById('project-subfilters').style.display = 'block'; // Assuming Engineering/Healthcare are application filters
              }
-             // Note: If a sub-filter was clicked *directly* (e.g. via history/bookmark if state was saved),
-             // the logic above correctly shows the parent group based on the active main filter state.
+             // If a sub-filter is clicked, the parent group remains visible because we didn't hide it above
 
 
              // Re-initialize AOS after filtering to animate visible items
