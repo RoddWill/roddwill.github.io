@@ -3,10 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact the AI/ML Engineer for inquiries, collaborations, or opportunities." />   <title>Contact | AI/ML Engineer Portfolio</title>   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="description" content="Contact the AI/ML Engineer based in London for inquiries, collaborations, or opportunities." />   <title>Contact | AI/ML Engineer Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Optional: Add custom styles for map iframe responsiveness */
+    .map-container {
+      position: relative;
+      overflow: hidden;
+      /* Adjust padding-top to control aspect ratio (e.g., 56.25% for 16:9) */
+      padding-top: 75%; /* Adjust as needed for your desired height relative to width */
+      height: 0; /* Needed for aspect ratio padding-top to work */
+    }
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0; /* Remove default iframe border */
+    }
+
+    /* Style for compact email */
+    .contact-info .space-y-2 > div { /* Target direct children divs for reduced space */
+      margin-bottom: 0.5rem; /* Adjust spacing as needed */
+    }
+    .contact-info .space-y-2 { /* Apply compact spacing to the parent div */
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * (1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 overflow-x-hidden">     <nav class="bg-white shadow">
+<body class="bg-gray-100 text-gray-800 overflow-x-hidden">
+    <nav class="bg-white shadow">
     <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
       <a href="index.html" class="text-2xl font-bold text-blue-700 mb-4 md:mb-0">Rodd Will</a>       <ul class="flex space-x-4 md:space-x-6">
         <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
@@ -21,43 +51,62 @@
   </nav>
 
     <section class="container mx-auto px-4 py-16">
-    <h2 class="text-4xl font-bold mb-8 text-center">Get in Touch</h2>     <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto text-center">
-      Have a question, a project idea, or just want to connect? Feel free to reach out!     </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <div class="bg-white p-8 rounded-lg shadow-md">
-        <h3 class="text-2xl font-semibold mb-6 text-blue-700">Send a Message</h3>                 <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">           <div class="mb-6">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700" required>
-          </div>
-          <div class="mb-6">
-            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700" required>
-          </div>
-          <div class="mb-6">
-            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
-            <textarea id="message" name="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700" required></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="bg-blue-700 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-800 transition duration-300 font-semibold">Send Message</button>
-          </div>
-        </form>
+    <h2 class="text-4xl font-bold mb-8 text-center">Get in Touch</h2>
+    <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto text-center">
+      Have a question, a project idea, or just want to connect? Feel free to reach out! You can find me in London.
+    </p>         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">             <div class="bg-white rounded-lg shadow-md overflow-hidden">         <div class="map-container">
+                    <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19868.576772405124!2d-0.1456436105921449!3d51.50701170274978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605200c793255%3A0x361b87e675028869!2sWestminster%2C%20London!5e0!3m2!1sen!2suk!4v1678987654321!5m2!1sen!2suk"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-md">
-        <h3 class="text-2xl font-semibold mb-6 text-blue-700">Contact Information</h3>         <div class="space-y-4">
-                    <div class="flex items-center">
-            <span class="text-blue-700 mr-3">📧</span>
-            <a href="mailto:rhudwill@gmail.com" class="text-gray-700 hover:underline">Email Address</a>           </div>
-          <div class="flex items-center">
-            <span class="text-blue-700 mr-3">🔗</span>
-            <a href="YOUR_LINKEDIN_URL" class="text-gray-700 hover:underline" target="_blank">LinkedIn Profile</a>           </div>
-          <div class="flex items-center">
-            <span class="text-blue-700 mr-3">🐙</span>
-            <a href="https://github.com/RoddWill" class="text-gray-700 hover:underline" target="_blank">Github Profile</a>           </div>
-          <div class="flex items-center">
-            <span class="text-blue-700 mr-3">📄</span>
-            <a href="path/to/your/resume.pdf" class="text-gray-700 hover:underline" download>Download Resume (PDF)</a>           </div>
+            <div>
+                <div class="bg-white p-8 rounded-lg shadow-md mb-12">           <h3 class="text-2xl font-semibold mb-6 text-blue-700">Send a Message</h3>
+                    <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">             <div class="mb-6">
+              <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700" required>
+            </div>
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700" required>
+          </div>
+                        <div class="mb-6">
+              <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject (Optional):</label>               <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700">
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+              <textarea id="message" name="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-700" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="bg-blue-700 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-800 transition duration-300 font-semibold">Send Message</button>
+          </div>
+          </form>
+        </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md contact-info">           <h3 class="text-2xl font-semibold mb-6 text-blue-700">Contact Information</h3>
+          <div class="space-y-2">                         <div class="flex items-center">
+              <span class="text-blue-700 mr-3">📧</span>
+              <a href="rhudwill@gmail.com" class="text-gray-700 hover:underline">rhudwill@gmail.com</a>             </div>
+                        <div class="flex items-center">
+              <span class="text-blue-700 mr-3">📍</span>               <p class="text-gray-700">London, UK</p>             </div>
+                        <div class="flex items-center">
+              <span class="text-blue-700 mr-3">📞</span>               <a href="tel:PHONE_NUMBER" class="text-gray-700 hover:underline">PHONE_NUMBER</a>             </div>
+                        <div class="flex items-center">
+              <span class="text-blue-700 mr-3">🔗</span>
+              <a href="YOUR_LINKEDIN_URL" class="text-gray-700 hover:underline" target="_blank">LinkedIn Profile</a>             </div>
+                        <div class="flex items-center">
+              <span class="text-blue-700 mr-3">🐙</span>
+              <a href="https://github.com/RoddWill" class="text-gray-700 hover:underline" target="_blank">https://github.com/RoddWill</a>             </div>
+                        <div class="flex items-center">
+              <span class="text-blue-700 mr-3">📄</span>
+              <a href="path/to/your/resume.pdf" class="text-gray-700 hover:underline" download>Download Resume (PDF)</a>           </div>
                   </div>
       </div>
     </div>
@@ -66,7 +115,7 @@
     <footer class="bg-gray-800 text-gray-200 py-8">
     <div class="container mx-auto px-4 text-center">
       <p>© 2025 Rodd Will. All rights reserved.</p>       <div class="flex justify-center space-x-6 mt-4">
-        <a href="https://github.com/RoddWill" class="hover:text-blue-400" target="_blank">GitHub Profile</a>         <a href="YOUR_LINKEDIN_URL" class="hover:text-blue-400" target="_blank">LinkedIn</a>         <a href="mailto:YOUR_EMAIL@example.com" class="hover:text-blue-400">Email</a>         <a href="path/to/your/resume.pdf" class="hover:text-blue-400" download>Resume</a>       </div>
+        <a href="https://github.com/RoddWill" class="hover:text-blue-400" target="_blank">GitHub</a>         <a href="YOUR_LINKEDIN_URL" class="hover:text-blue-400" target="_blank">LinkedIn</a>         <a href="mailto:rhudwill@gmail.com" class="hover:text-blue-400">Email</a>         <a href="path/to/your/resume.pdf" class="hover:text-blue-400" download>Resume</a>       </div>
     </div>
   </footer>
   <script src="assets/js/script.js"></script>
