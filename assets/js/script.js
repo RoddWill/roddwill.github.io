@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 let showItem = false;
 
+                // Determine if the item should be shown based on the filter value
                 switch (filterValue) {
                     case 'all':
                         showItem = true;
@@ -90,11 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                  // Toggle visibility using Bootstrap's d-none for better performance with AOS
-                 if (showItem) {
-                    item.classList.remove('d-none');
-                 } else {
-                     item.classList.add('d-none');
-                 }
+                 // Using setTimeout to allow AOS to calculate visibility before hiding
+                 setTimeout(() => {
+                     if (showItem) {
+                        item.classList.remove('d-none');
+                     } else {
+                         item.classList.add('d-none');
+                     }
+                 }, 50); // Small delay
+
+
             });
 
             // Manage sub-filter button group visibility
@@ -103,26 +109,26 @@ document.addEventListener('DOMContentLoaded', () => {
                  group.style.display = 'none';
              });
 
-             // Show the relevant sub-filter group based on the *main* filter clicked
-             // Note: This logic assumes that clicking a main filter button (project, publication, application)
-             // should reveal its corresponding sub-filters. Clicking 'All Work' hides all sub-filters.
+             // Show the relevant sub-filter group based on the main filter clicked
+             // Only show sub-filters when a specific type (project, publication, application) is selected, NOT when 'All Work' is selected.
              if (filterValue === 'project') {
                  document.getElementById('project-subfilters').style.display = 'block';
              } else if (filterValue === 'publication') {
                  document.getElementById('publication-subfilters').style.display = 'block';
              } else if (filterValue === 'application') {
                  // Assuming Engineering/Healthcare also apply to Applications, show that group
-                 document.getElementById('project-subfilters').style.display = 'block'; // Assuming Engineering/Healthcare are application filters
+                 // You might want a separate application sub-filter div if the filters are different
+                 document.getElementById('project-subfilters').style.display = 'block';
              }
-             // If a sub-filter is clicked, the parent group remains visible because we didn't hide it above
+             // If a sub-filter is clicked, the parent group remains visible because we don't hide it here.
+             // The initial state (on page load or 'All Work' click) hides all sub-filter groups.
 
 
-             // Re-initialize AOS after filtering to animate visible items
+             // Re-initialize AOS after filtering to animate newly visible items
              // Note: AOS might not re-animate elements already in view that were hidden/shown.
-             // For true re-animation, you might need to remove/re-add elements or use more advanced techniques.
              setTimeout(() => { // Small delay helps ensure display changes are processed
-                 AOS.refresh();
-             }, 50);
+                 AOS.refreshHard(); // Use refreshHard to re-calculate all element positions
+             }, 100); // Slightly longer delay for refreshHard
         }
 
         // Add click listeners to all filter buttons
@@ -158,6 +164,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FAQ Toggle Functionality (Bootstrap's JS handles this via data-bs-toggle="collapse") ---
     // No custom JS needed if using Bootstrap's built-in Accordion component.
     // Ensure your FAQ HTML uses data-bs-toggle and data-bs-target correctly.
+
+
+    // --- Smooth Scrolling for Table of Contents ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            // Check if the link is internal to the current page and points to an element ID
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#' && document.querySelector(targetId)) {
+                 e.preventDefault(); // Prevent default anchor jump
+
+                 document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth' // Smooth scroll
+                 });
+
+                 // Optional: Update URL hash without jumping
+                 // history.pushState(null, null, targetId);
+            }
+        });
+    });
 
 
     // --- Other Custom JS (Keep existing if you had it) ---
