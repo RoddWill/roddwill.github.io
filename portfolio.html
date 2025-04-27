@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="bg-light py-2 border-bottom"> <div class="container text-center text-secondary"> <a href="mailto:you@example.com" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fas fa-envelope me-1"></i> <span class="d-none d-md-inline">Email</span></a> <a href="#" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-google-scholar me-1"></i> <span class="d-none d-md-inline">Scholar</span></a> <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-github me-1"></i> <span class="d-none d-md-inline">GitHub</span></a> <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-linkedin me-1"></i> <span class="d-none d-md-inline">LinkedIn</span></a> <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-twitter me-1"></i> <span class="d-none d-md-inline">Twitter</span></a> <a href="YOUR_MEDIUM_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-medium me-1"></i> <span class="d-none d-md-inline">Medium</span></a> </div>
+  <header class="bg-light py-2 border-bottom"> <div class="container text-center text-secondary"> <a href="mailto:you@example.com" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fas fa-envelope me-1"></i> <span class="d-none d-md-inline">Email</span></a> <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-google-scholar me-1"></i> <span class="d-none d-md-inline">Scholar</span></a> <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-github me-1"></i> <span class="d-none d-md-inline">GitHub</span></a> <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-linkedin me-1"></i> <span class="d-none d-md-inline">LinkedIn</span></a> <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-twitter me-1"></i> <span class="d-none d-md-inline">Twitter</span></a> <a href="YOUR_MEDIUM_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-medium me-1"></i> <span class="d-none d-md-inline">Medium</span></a> </div>
   </header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
@@ -26,7 +26,10 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About / CV</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a></li> <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li> <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li> <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -43,11 +46,11 @@
         <button class="btn btn-outline-secondary mx-1 my-1 filter-btn main-filter" data-filter="publication" data-filter-group="main">All Publications</button>
         <button class="btn btn-outline-secondary mx-1 my-1 filter-btn main-filter" data-filter="application" data-filter-group="main">All Applications</button>
 
-        <div class="sub-filters mt-3" id="project-subfilters">
+        <div class="sub-filters mt-3" id="project-subfilters" data-filter-group="projects">
             <button class="btn btn-outline-success mx-1 my-1 filter-btn sub-filter" data-filter="engineering" data-filter-group="projects">Engineering Applications</button>
             <button class="btn btn-outline-success mx-1 my-1 filter-btn sub-filter" data-filter="healthcare" data-filter-group="projects">Healthcare Applications</button>
         </div>
-         <div class="sub-filters mt-3" id="publication-subfilters">
+         <div class="sub-filters mt-3" id="publication-subfilters" data-filter-group="publications">
             <button class="btn btn-outline-info mx-1 my-1 filter-btn sub-filter" data-filter="journals" data-filter-group="publications">Journals</button>
             <button class="btn btn-outline-info mx-1 my-1 filter-btn sub-filter" data-filter="conferences" data-filter-group="publications">Conferences</button>
         </div>
