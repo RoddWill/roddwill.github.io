@@ -1,100 +1,26 @@
-/* Custom styles go here, supplementing or overriding Tailwind defaults */
+/* Custom styles go here, supplementing Bootstrap defaults */
 
-/* Apply Poppins font and base body styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+/* Example: Custom style for carousel images to ensure they cover the area */
+/* The Bootstrap class object-fit-cover is often enough, but a custom height might be needed */
+.carousel-item img {
+    /* height: 500px; Adjust as needed for your design */
+    object-fit: cover;
+    /* Ensure this height is applied if object-fit-cover isn't working as expected */
 }
 
-/* Add a smooth transition for theme changes */
-body,
-nav,
-.theme-switcher select,
-.bg-white,
-.bg-gray-50,
-.bg-gray-100,
-.bg-gray-800,
-.bg-gray-900,
-.text-gray-800,
-.text-gray-700,
-.text-gray-300,
-.text-gray-200,
-.text-gray-400,
-.border,
-.border-gray-100,
-.border-gray-300,
-.border-gray-600,
-.border-gray-700,
-.focus\:ring-blue-700,
-.focus\:ring-blue-400,
-.bg-blue-50, /* Add other specific elements that have distinct dark modes */
-.bg-blue-100
-{
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+/* Example: Style for the logo image in the navbar if needed */
+.navbar-brand img {
+    /* margin-right: .5rem; Bootstrap's me-2 class usually handles this */
 }
 
 
-/* --- Layout Debugger Style (Remove this section from HTML and CSS once layout is correct) --- */
-.layout-debugger {
-  display: block; /* Show on mobile by default */
-}
+/* You can add custom styles here for specific elements or overrides */
+/* For example, custom button colors, section backgrounds, etc. */
+/* .btn-custom-color {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+    color: white;
+} */
 
-/* Hide the debugger on screens md and larger */
-@media (min-width: 768px) { /* Tailwind's md breakpoint */
-  .layout-debugger {
-    display: none;
-  }
-}
-/* --- End Layout Debugger Style --- */
-
-
-/* --- Styles for Contact Page Map --- */
-/* Container to maintain aspect ratio for the embedded map */
-.map-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 75%; /* Adjust as needed for your desired height relative to width */
-  height: 0;
-}
-
-/* Ensure the iframe fills the aspect ratio container */
-.map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* --- Styles for Compact Contact Info --- */
-/* Targets the parent div containing contact items to apply overall reduced spacing */
-.contact-info .space-y-2 {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * (1 - var(--tw-space-y-reverse))); /* 0.5rem = 8px */
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
-/* Optional fine-tuning for individual contact items */
-.contact-info .space-y-2 > div {
-  /* margin-bottom: 0.25rem; */
-}
-
-
-/* --- Styles for FAQ Toggle Icon --- */
-/* Styling for the FAQ toggle icon */
-.faq-item .faq-question .faq-icon {
-  transition: transform 0.3s ease;
-  display: inline-block; /* Ensure transform works correctly */
-}
-
-/* Active state for the FAQ icon - changes '+' to an 'x' visually */
-.faq-item .faq-question.active .faq-icon {
-  transform: rotate(45deg);
-}
-
-/* Add any other custom styles here */
+/* Style for the breakpoint debugger if you add it for testing */
+/* .layout-debugger { ... } */
