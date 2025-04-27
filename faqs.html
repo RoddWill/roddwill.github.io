@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="bg-light py-2 border-bottom"> <div class="container text-center text-secondary"> <a href="mailto:you@example.com" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fas fa-envelope me-1"></i> <span class="d-none d-md-inline">Email</span></a> <a href="#" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-google-scholar me-1"></i> <span class="d-none d-md-inline">Scholar</span></a> <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-github me-1"></i> <span class="d-none d-md-inline">GitHub</span></a> <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-linkedin me-1"></i> <span class="d-none d-md-inline">LinkedIn</span></a> <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-twitter me-1"></i> <span class="d-none d-md-inline">Twitter</span></a> <a href="YOUR_MEDIUM_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-medium me-1"></i> <span class="d-none d-md-inline">Medium</span></a> </div>
+  <header class="bg-light py-2 border-bottom"> <div class="container text-center text-secondary"> <a href="mailto:you@example.com" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fas fa-envelope me-1"></i> <span class="d-none d-md-inline">Email</span></a> <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-google-scholar me-1"></i> <span class="d-none d-md-inline">Scholar</span></a> <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-github me-1"></i> <span class="d-none d-md-inline">GitHub</span></a> <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-linkedin me-1"></i> <span class="d-none d-md-inline">LinkedIn</span></a> <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-twitter me-1"></i> <span class="d-none d-md-inline">Twitter</span></a> <a href="YOUR_MEDIUM_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-medium me-1"></i> <span class="d-none d-md-inline">Medium</span></a> </div>
   </header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
@@ -26,7 +26,10 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About / CV</a></li>
-          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li> <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li> <li class="nav-item"><a class="nav-link active" aria-current="page" href="faqs.html">FAQs</a></li> <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="faqs.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -37,9 +40,21 @@
 
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <div class="accordion" id="faqAccordion" data-aos="fade-up">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
+            <div class="card bg-light mb-4" data-aos="fade-up" data-aos-delay="50">
+                <div class="card-body">
+                    <!--<h4 class="card-title fw-bold mb-3">Table of Contents</h4>-->
+                    <ul class="list-unstyled faq-toc">
+                        <li><a href="#faq1">What specific AIML algorithms do you specialize in?</a></li>
+                        <li><a href="#faq2">Can you work with industry-specific data formats?</a></li>
+                        <li><a href="#faq3">What is your approach to model interpretability?</a></li>
+                        <li><a href="#faq4">Which cloud platforms do you have experience with?</a></li>
+                        <li><a href="#faq5">What are some common evaluation metrics for classification models?</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="100">
+                <div class="accordion-item" id="faq1"> <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             What specific AIML algorithms do you specialize in?
                         </button>
@@ -50,8 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
+                <div class="accordion-item" id="faq2"> <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Can you work with industry-specific data formats?
                         </button>
@@ -59,6 +73,78 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
                              Yes, I have experience handling diverse data types common in engineering (time-series sensor data, logs, operational parameters) and healthcare (EHR data, claims data, vital signs). I am proficient in data cleaning, transformation, and feature engineering tailored to these domains.
+                        </div>
+                    </div>
+                </div>
+                 <div class="accordion-item" id="faq3"> <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            What is your approach to model interpretability?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                             Model interpretability is crucial, especially in domains like healthcare and engineering where understanding predictions is vital. I use techniques such as SHAP (SHapley Additive exPlanations), LIME (Local Interpretable Model-agnostic Explanations), permutation importance, and partial dependence plots to explain model predictions and understand feature importance.
+                        </div>
+                    </div>
+                </div>
+                 <div class="accordion-item" id="faq4"> <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Which cloud platforms do you have experience with?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            I have practical experience with major cloud platforms including AWS (S3, EC2, SageMaker, Lambda), GCP (Cloud Storage, Compute Engine, AI Platform), and Azure (Blob Storage, Virtual Machines, Azure ML). I am comfortable building and deploying ML solutions within these environments.
+                        </div>
+                    </div>
+                </div>
+                 <div class="accordion-item" id="faq5"> <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            What are some common evaluation metrics for classification models?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                             The choice of evaluation metric depends heavily on the problem. Some common metrics for classification models include:
+                             <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Metric</th>
+                                            <th>Description</th>
+                                            <th>When to Use</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Accuracy</td>
+                                            <td>Overall proportion of correct predictions.</td>
+                                            <td>Good for balanced datasets.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Precision</td>
+                                            <td>Proportion of positive identifications that were actually correct.</td>
+                                            <td>When minimizing False Positives is critical.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Recall (Sensitivity)</td>
+                                            <td>Proportion of actual positives that were identified correctly.</td>
+                                            <td>When minimizing False Negatives is critical.</td>
+                                        </tr>
+                                         <tr>
+                                            <td>F1-Score</td>
+                                            <td>Harmonic mean of Precision and Recall.</td>
+                                            <td>Good for imbalanced datasets, balances Precision and Recall.</td>
+                                        </tr>
+                                         <tr>
+                                            <td>AUC-ROC</td>
+                                            <td>Area under the Receiver Operating Characteristic curve; measures ability to distinguish classes.</td>
+                                            <td>For evaluating model performance across various thresholds.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                             </div>
+                              Other important metrics include Specificity, F-beta Score, and Log Loss.
                         </div>
                     </div>
                 </div>
