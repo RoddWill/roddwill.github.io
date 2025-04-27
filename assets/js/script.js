@@ -2,14 +2,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Initialize AOS - Also initialized inline in HTML for simplicity, this is a fallback
+    // AOS.init({ duration: 800, once: true });
+
+
     // --- Portfolio Filtering Functionality ---
     function initPortfolioFiltering() {
-        const filterButtons = document.querySelectorAll('#work-grid-section .filter-btn'); // Target buttons within a specific section if needed
-        const workItems = document.querySelectorAll('#work-grid .col.work-item'); // Target the column div containing the card
+        const filterButtons = document.querySelectorAll('#work-grid-section .filter-btn'); // Target buttons within the portfolio section
+        const workGrid = document.getElementById('work-grid');
+        const workItems = workGrid ? workGrid.querySelectorAll('.col.work-item') : []; // Target the column div containing the card
 
         // Exit if no work items or buttons found
         if (!workItems.length || !filterButtons.length) {
-            console.warn("Portfolio filtering elements not found.");
+            console.warn("Portfolio filtering elements or work items not found.");
             return;
         }
 
@@ -17,24 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', () => {
                 const filterValue = button.getAttribute('data-filter'); // e.g., 'all', 'project', 'engineering', 'journals', etc.
 
-                // Update active button style
+                // Update active button style (using Bootstrap's .active class)
                 filterButtons.forEach(btn => {
-                    btn.classList.remove('active'); // Remove Bootstrap's active class
-                    // You might need to toggle custom classes here for specific colors if not using Bootstrap's active state
-                    // e.g., btn.classList.remove('btn-primary'); btn.classList.add('btn-outline-primary');
-                });
-                button.classList.add('active'); // Add Bootstrap's active class
+                     btn.classList.remove('active', 'btn-primary');
+                     // Re-add appropriate outline classes if you want them to revert visually
+                     if (btn.classList.contains('btn-outline-secondary')) btn.classList.add('btn-outline-secondary');
+                     else if (btn.classList.contains('btn-outline-success')) btn.classList.add('btn-outline-success');
+                     else if (btn.classList.contains('btn-outline-info')) btn.classList.add('btn-outline-info');
+                     else if (btn.classList.contains('btn-outline-primary')) btn.classList.add('btn-outline-primary');
 
-                // If using custom colors for active state instead of Bootstrap's .active class:
-                // filterButtons.forEach(btn => {
-                //     if (btn.getAttribute('data-filter') === filterValue) {
-                //         btn.classList.remove('btn-outline-primary', 'btn-outline-secondary', 'btn-outline-success', 'btn-outline-info');
-                //         btn.classList.add('btn-primary'); // Or a specific active color class
-                //     } else {
-                //          // Reset to outline based on original type or a default
-                //          // This requires more complex logic or separate classes per button type
-                //     }
-                // });
+                });
+                button.classList.add('active', 'btn-primary'); // Apply active style
 
 
                 workItems.forEach(item => {
@@ -70,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Toggle item visibility using Bootstrap's d-none utility or direct style
                     if (showItem) {
                         item.style.display = 'block'; // Use block to override Bootstrap's d-none if present
-                        // item.classList.remove('d-none'); // Alternative using Bootstrap class
+                         // item.classList.remove('d-none'); // Alternative using Bootstrap class
                     } else {
                          item.style.display = 'none'; // Hide the element
                         // item.classList.add('d-none'); // Alternative using Bootstrap class
@@ -78,7 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                  // Optional: Re-initialize AOS after filtering to animate visible items
-                 // AOS.refresh(); // Note: AOS might not re-animate elements already in view
+                 // Note: AOS might not re-animate elements already in view that were hidden/shown.
+                 // You might need a more complex approach if you require re-animation on filter change.
+                 // AOS.refresh();
             });
         });
 
@@ -98,9 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- FAQ Toggle Functionality (Keep existing if you had it) ---
-    // Ensure your FAQ script targets the correct Bootstrap accordion structure
-    // ... your existing FAQ script code here ...
+    // --- FAQ Toggle Functionality (Bootstrap's JS handles this via data-bs-toggle="collapse") ---
+    // No custom JS needed if using Bootstrap's built-in Accordion component.
 
 
     // --- Other Custom JS (Keep existing if you had it) ---
