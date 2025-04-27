@@ -3,47 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Blog by the AI/ML Engineer sharing insights, tutorials, and thoughts on AI, ML, data science, and software development." />   <title>Blog | AI/ML Engineer Portfolio</title>   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="google-site-verification" content="YOUR-GOOGLE-TAG-HERE" />
+  <meta name="description" content="YOUR PAGE DESCRIPTION" />   <title>Your Name | YOUR PAGE TITLE</title>     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="bg-gray-100 text-gray-800 overflow-x-hidden">     <nav class="bg-white shadow">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 overflow-x-hidden font-poppins">     <div class="theme-switcher fixed top-4 right-4 z-50">
+    <select id="theme-select" class="p-2 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 cursor-pointer transition-colors duration-300">
+      <option value="auto">Auto</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </div>
+      <nav class="bg-white dark:bg-gray-800 shadow-sm transition-colors duration-300">
     <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-blue-700 mb-4 md:mb-0">Rodd Will</a>       <ul class="flex space-x-4 md:space-x-6">
-        <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
-        <li><a href="about.html" class="hover:text-blue-700">About</a></li>
-        <li><a href="services.html" class="hover:text-blue-700">Services</a></li>
-        <li><a href="portfolio.html" class="hover:text-blue-700">Portfolio</a></li>
-        <li><a href="blog.html" class="hover:text-blue-700">Blog</a></li>
-        <li><a href="faq.html" class="hover:text-blue-700">FAQs</a></li>
-        <li><a href="contact.html" class="hover:text-blue-700">Contact</a></li>
+      <a href="index.html" class="text-2xl font-bold text-blue-700 dark:text-blue-400 mb-4 md:mb-0">YourName</a>       <ul class="flex space-x-4 md:space-x-6">
+        <li><a href="index.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">About</a></li>
+        <li><a href="services.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">Services</a></li>
+        <li><a href="portfolio.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">Portfolio</a></li>
+        <li><a href="blog.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">Blog</a></li>
+        <li><a href="faq.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">FAQs</a></li>
+        <li><a href="contact.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">Contact</a></li>
       </ul>
-      </div>
-    </nav>
+    </div>
+  </nav>
 
-        <section class="container mx-auto px-4 py-16">
-      <h2 class="text-4xl font-bold mb-8 text-center">Latest Posts</h2>       <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto text-center">
-        Sharing insights, tutorials, and experiences from the world of AI/ML, data science, and software development.       </p>
+  <section class="container mx-auto px-4 py-16">
+    <h2 class="text-4xl font-bold mb-12 text-center text-blue-700 dark:text-blue-400">Latest Posts</h2>
 
-      <div id="posts" class="space-y-10 max-w-3xl mx-auto">
-                        <article class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-2xl font-semibold mb-3"><a href="YOUR_POST_URL_1" class="text-blue-700 hover:underline">Improving Predictive Model Performance with Advanced Feature Engineering</a></h3>           <p class="text-gray-600 text-sm mb-4">Published on <time datetime="2025-04-25">April 25, 2025</time> | <span class="text-blue-700">#MachineLearning #FeatureEngineering</span></p>           <p class="text-gray-700 mb-4">
-            Explore techniques beyond simple transformations to boost your model's accuracy and interpretability...           </p>
-          <a href="YOUR_POST_URL_1" class="text-blue-700 hover:underline">Read More &rarr;</a>         </article>
+    <div id="posts" class="space-y-10 max-w-3xl mx-auto">
+            <article class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 border border-gray-100 dark:border-gray-700">
+        <h3 class="text-2xl font-semibold mb-3"><a href="YOUR_POST_URL_1" class="text-blue-700 dark:text-blue-400 hover:underline transition duration-300">Improving Predictive Model Performance with Advanced Feature Engineering</a></h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Published on <time datetime="2025-04-25">April 25, 2025</time> | <span class="text-teal-600 dark:text-teal-400">#MachineLearning #FeatureEngineering</span></p>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">Explore techniques beyond simple transformations...</p>
+        <a href="YOUR_POST_URL_1" class="text-teal-600 dark:text-teal-400 hover:underline transition duration-300">Read More &rarr;</a>
+      </article>
 
-                <article class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-          <h3 class="text-2xl font-semibold mb-3"><a href="YOUR_POST_URL_2" class="text-blue-700 hover:underline">A Deep Dive into XGBoost for Classification Tasks</a></h3>           <p class="text-gray-600 text-sm mb-4">Published on <time datetime="2025-03-18">March 18, 2025</time> | <span class="text-blue-700">#XGBoost #Classification #Tutorial</span></p>           <p class="text-gray-700 mb-4">
-            Understanding the inner workings and practical tips for leveraging XGBoost in your classification projects...           </p>
-          <a href="YOUR_POST_URL_2" class="text-blue-700 hover:underline">Read More &rarr;</a>         </article>
+            <article class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 border border-gray-100 dark:border-gray-700">
+        <h3 class="text-2xl font-semibold mb-3"><a href="YOUR_POST_URL_2" class="text-blue-700 dark:text-blue-400 hover:underline transition duration-300">A Deep Dive into XGBoost for Classification Tasks</a></h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Published on <time datetime="2025-03-18">March 18, 2025</time> | <span class="text-teal-600 dark:text-teal-400">#XGBoost #Classification #Tutorial</span></p>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">Understanding the inner workings...</p>
+        <a href="YOUR_POST_URL_2" class="text-teal-600 dark:text-teal-400 hover:underline transition duration-300">Read More &rarr;</a>
+      </article>
 
-              </div>
-    </section>
+          </div>
+  </section>
 
-        <footer class="bg-gray-800 text-gray-200 py-8">
-      <div class="container mx-auto px-4 text-center">
-        <p>© 2025 Rodd Will. All rights reserved.</p>         <div class="flex justify-center space-x-6 mt-4">
-          <a href="https://github.com/RoddWill" class="hover:text-blue-400" target="_blank">GitHub</a>           <a href="YOUR_LINKEDIN_URL" class="hover:text-blue-400" target="_blank">LinkedIn</a>           <a href="mailto:YOUR_EMAIL@example.com" class="hover:text-blue-400">Email</a>           <a href="path/to/your/resume.pdf" class="hover:text-blue-400" download>Resume</a>         </div>
-      </div>
-    </footer>
+        <footer class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-600 py-10">     <div class="container mx-auto px-4 text-center">
+      <p>© 2025 YourName. All rights reserved.</p>       <div class="flex justify-center space-x-6 mt-6">
+        <a href="YOUR_GITHUB_URL" class="hover:text-teal-400 transition-colors duration-300" target="_blank">GitHub</a>         <a href="YOUR_LINKEDIN_URL" class="hover:text-teal-400 transition-colors duration-300" target="_blank">LinkedIn</a>         <a href="mailto:YOUR_EMAIL@example.com" class="hover:text-teal-400 transition-colors duration-300">Email</a>         <a href="path/to/your/resume.pdf" class="hover:text-teal-400 transition-colors duration-300" download>Resume</a>       </div>
+    </div>
+  </footer>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
