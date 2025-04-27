@@ -4,28 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="YOUR-GOOGLE-TAG-HERE" />
-  <meta name="description" content="YOUR PAGE DESCRIPTION" />   <title>Your Name | YOUR PAGE TITLE</title>     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Your Name's AI/ML Engineer portfolio showcasing expertise in predictive modeling, classification, engineering, and healthcare applications." />   <title>Your Name | AI/ML Engineer</title>     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* Custom styling for the contact info list below the picture */
+    .contact-list.space-y-2 > div {
+      margin-bottom: 0.5rem; /* Adjust spacing as needed */
+    }
+    .contact-list.space-y-2 {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * (1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+  </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-merriweather overflow-x-hidden">     <div class="theme-switcher fixed top-4 right-4 z-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-merriweather overflow-x-hidden">
+
+    <div class="theme-switcher fixed top-4 right-4 z-50">
     <select id="theme-select" class="p-2 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 transition-colors duration-300 text-sm">
       <option value="auto">Auto</option>
       <option value="light">Light</option>
       <option value="dark">Dark</option>
     </select>
   </div>
-        <header class="container mx-auto px-4 py-8 flex justify-between items-center">
-    <a href="index.html" class="text-3xl font-bold font-lato text-gray-900 dark:text-gray-100 hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">YourName</a>   </header>
+      <section class="container mx-auto px-4 py-12 md:py-24 grid grid-cols-1 md:grid-cols-3 gap-8">         <div class="md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+            <img src="assets/images/profile-large.jpg" alt="Your Name" class="rounded-lg w-2/3 md:w-full max-w-xs mb-6 object-cover shadow-lg border border-gray-200 dark:border-gray-700">
 
-    <nav class="bg-white dark:bg-gray-800 shadow-sm transition-colors duration-300 py-4 mb-8">
-    <div class="container mx-auto px-4 text-center">
-      <ul class="flex justify-center space-x-6 md:space-x-10 font-lato font-bold text-gray-700 dark:text-gray-300">
-        <li><a href="index.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">Home</a></li>
+            <h1 class="text-3xl md:text-4xl font-bold font-lato mb-4 text-gray-900 dark:text-gray-100">Your Name</h1>
+
+            <div class="w-full text-gray-700 dark:text-gray-300">
+        <div class="space-y-2 contact-list">                     <div class="flex items-center justify-center md:justify-start">             <span class="text-blue-700 dark:text-blue-400 mr-3">📧</span>
+            <a href="mailto:YOUR_EMAIL@example.com" class="hover:underline transition-colors duration-300">YOUR_EMAIL@example.com</a>           </div>
+                    <div class="flex items-center justify-center md:justify-start">
+            <span class="text-blue-700 dark:text-blue-400 mr-3">📍</span>
+            <p>London, UK</p>           </div>
+                    <div class="flex items-center justify-center md:justify-start">
+            <span class="text-blue-700 dark:text-blue-400 mr-3">📞</span>
+            <a href="tel:YOUR_PHONE_NUMBER" class="hover:underline transition-colors duration-300">YOUR_PHONE_NUMBER</a>           </div>
+                    <div class="flex items-center justify-center md:justify-start">
+            <span class="text-blue-700 dark:text-blue-400 mr-3">🔗</span>
+            <a href="YOUR_LINKEDIN_URL" class="hover:underline transition-colors duration-300" target="_blank">LinkedIn</a>           </div>
+                    <div class="flex items-center justify-center md:justify-start">
+            <span class="text-blue-700 dark:text-blue-400 mr-3">🐙</span>
+            <a href="YOUR_GITHUB_URL" class="hover:underline transition-colors duration-300" target="_blank">GitHub</a>           </div>
+                  </div>
+      </div>
+    </div>
+
+        <div class="md:col-span-2">
+            <ul class="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 font-lato font-bold text-gray-700 dark:text-gray-300 mb-12">         <li><a href="index.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">Home</a></li>
         <li><a href="about.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">About</a></li>
         <li><a href="services.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">Services</a></li>
         <li><a href="portfolio.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">Portfolio</a></li>
@@ -33,18 +66,26 @@
         <li><a href="faq.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">FAQs</a></li>
         <li><a href="contact.html" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">Contact</a></li>
       </ul>
-    </div>
-  </nav>
 
-        <footer class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-10 mt-12 transition-colors duration-300">
-    <div class="container mx-auto px-4 text-center text-sm">
-      <p>© 2025 YourName. All rights reserved.</p>       <div class="flex justify-center space-x-6 mt-4">
-        <a href="YOUR_GITHUB_URL" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300" target="_blank">GitHub</a>
-        <a href="YOUR_LINKEDIN_URL" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300" target="_blank">LinkedIn</a>
-        <a href="mailto:YOUR_EMAIL@example.com" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300">Email</a>
-        <a href="path/to/your/resume.pdf" class="hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-300" download>Resume</a>
+            <div class="text-gray-800 dark:text-gray-200 leading-relaxed">
+        <p class="text-lg md:text-xl mb-6">
+          I am an AI/ML engineer specializing in building robust predictive and classification models for complex problems in engineering and healthcare,
+          backed by strong software development practices.
+        </p>
+        <p class="text-lg mb-6">
+          With a background in [Your Background] and a deep dive into data science, I leverage machine learning techniques to extract insights and build impactful solutions. My expertise spans key areas like time-series forecasting, anomaly detection, and risk stratification.
+        </p>
+        <p class="text-lg">
+          Explore my <a href="portfolio.html" class="text-blue-700 dark:text-blue-400 hover:underline transition-colors duration-300">projects</a>, learn more <a href="about.html" class="text-blue-700 dark:text-blue-400 hover:underline transition-colors duration-300">about me</a>, or <a href="contact.html" class="text-blue-700 dark:text-blue-400 hover:underline transition-colors duration-300">get in touch</a>.
+        </p>
       </div>
+
     </div>
+  </section>
+
+    <footer class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-6 mt-8 transition-colors duration-300 text-center text-sm">
+    <div class="container mx-auto px-4">
+      <p>© 2025 YourName.</p>     </div>
   </footer>
 
     <script src="assets/js/script.js"></script>
