@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 text-gray-800 overflow-x-hidden">     <nav class="bg-white shadow">
     <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-blue-700 mb-4 md:mb-0">RoddWill</a>       <ul class="flex space-x-4 md:space-x-6">
+      <a href="index.html" class="text-2xl font-bold text-blue-700 mb-4 md:mb-0">Rodd Will</a>       <ul class="flex space-x-4 md:space-x-6">
         <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
         <li><a href="about.html" class="hover:text-blue-700">About</a></li>
         <li><a href="services.html" class="hover:text-blue-700">Services</a></li>
@@ -41,13 +41,37 @@
           Yes, I have experience handling diverse data types common in engineering (time-series sensor data, logs, operational parameters) and healthcare (EHR data, claims data, vital signs). I am proficient in data cleaning, transformation, and feature engineering tailored to these domains.         </div>
       </div>
 
+            <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300">
+        <h3 class="faq-question text-xl font-semibold flex justify-between items-center">
+          How do you approach model deployment?           <span class="faq-icon text-blue-700">+</span>
+        </h3>
+        <div class="faq-answer hidden mt-3 text-gray-700">
+          I follow MLOps principles to ensure models are production-ready. This typically involves containerization (Docker), setting up APIs (Flask/FastAPI), utilizing cloud services (AWS SageMaker, GCP AI Platform, Azure ML) for hosting and monitoring, and integrating with existing software systems.         </div>
+      </div>
+
+            <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300">
+        <h3 class="faq-question text-xl font-semibold flex justify-between items-center">
+          How do you ensure model interpretability and explainability?           <span class="faq-icon text-blue-700">+</span>
+        </h3>
+        <div class="faq-answer hidden mt-3 text-gray-700">
+          I prioritize interpretability by using techniques such as feature importance scores (from tree-based models), SHAP or LIME values, partial dependence plots, and model-specific explanations where applicable. This is crucial for building trust, debugging, and gaining insights, especially in regulated domains like healthcare.         </div>
+      </div>
+
+            <div class="faq-item bg-white p-6 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300">
+        <h3 class="faq-question text-xl font-semibold flex justify-between items-center">
+          What is your approach to handling imbalanced datasets in classification?           <span class="faq-icon text-blue-700">+</span>
+        </h3>
+        <div class="faq-answer hidden mt-3 text-gray-700">
+          I use a combination of strategies depending on the data and problem, including appropriate evaluation metrics (Precision, Recall, F1-score, ROC-AUC instead of just accuracy), resampling techniques (oversampling the minority class, undersampling the majority class), using algorithms robust to imbalance (like tree-based models with adjusted class weights), and generating synthetic samples (e.g., SMOTE).         </div>
+      </div>
+
           </div>
   </section>
 
     <footer class="bg-gray-800 text-gray-200 py-8">
     <div class="container mx-auto px-4 text-center">
       <p>© 2025 Rodd Will. All rights reserved.</p>       <div class="flex justify-center space-x-6 mt-4">
-        <a href="https://github.com/RoddWill" class="hover:text-blue-400" target="_blank">GitHub</a>         <a href="YOUR_LINKEDIN_URL" class="hover:text-blue-400" target="_blank">LinkedIn</a>         <a href="mailto:rhudwill@gmail.com" class="hover:text-blue-400">Email</a>         <a href="path/to/your/resume.pdf" class="hover:text-blue-400" download>Resume</a>       </div>
+        <a href="https://github.com/RoddWill" class="hover:text-blue-400" target="_blank">GitHub</a>         <a href="YOUR_LINKEDIN_URL" class="hover:text-blue-400" target="_blank">LinkedIn</a>         <a href="rhudwill@gmail.com" class="hover:text-blue-400">Email</a>         <a href="path/to/your/resume.pdf" class="hover:text-blue-400" download>Resume</a>       </div>
     </div>
   </footer>
   <script src="assets/js/script.js"></script> </body>
