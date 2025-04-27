@@ -38,6 +38,37 @@
     /* margin-right: .5rem; Bootstrap's me-2 class usually handles this */
 }
 
+/* Style for the table within the FAQ answer */
+.faq-table {
+    /* Add any specific table styles if needed, e.g., */
+    /* font-size: 0.9rem; */
+}
+
+/* Style for the blog Table of Contents links */
+.blog-toc a {
+    text-decoration: none; /* Remove underline */
+    color: var(--bs-body-color); /* Use body text color */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.blog-toc a:hover {
+    color: var(--bs-primary); /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Style for the FAQ Table of Contents links */
+.faq-toc a {
+    text-decoration: none; /* Remove underline */
+    color: var(--bs-body-color); /* Use body text color */
+     transition: color 0.3s ease; /* Smooth transition */
+}
+
+.faq-toc a:hover {
+    color: var(--bs-primary); /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
 /* Example: Style for the breakpoint debugger if you add it for testing */
 /* .layout-debugger { ... } */
 
