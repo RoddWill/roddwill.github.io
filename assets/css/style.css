@@ -1,26 +1,44 @@
 /* Custom styles go here, supplementing Bootstrap defaults */
 
-/* Example: Custom style for carousel images to ensure they cover the area */
-/* The Bootstrap class object-fit-cover is often enough, but a custom height might be needed */
-.carousel-item img {
-    /* height: 500px; Adjust as needed for your design */
-    object-fit: cover;
-    /* Ensure this height is applied if object-fit-cover isn't working as expected */
+/* Reduce the height of the hero carousel images */
+.hero-carousel-img {
+    height: 60vh; /* 60% of the viewport height */
+    /* You can adjust this value (e.g., 400px, 50vh, etc.) */
+    object-fit: cover; /* Ensure images cover the area */
 }
+
+/* Style for the map iframe container on the contact page */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 75%; /* Aspect ratio 4:3. Use 56.25% for 16:9 */
+    height: 0;
+}
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 
 /* Example: Style for the logo image in the navbar if needed */
 .navbar-brand img {
     /* margin-right: .5rem; Bootstrap's me-2 class usually handles this */
 }
 
+/* Example: Style for the breakpoint debugger if you add it for testing */
+/* .layout-debugger { ... } */
 
-/* You can add custom styles here for specific elements or overrides */
-/* For example, custom button colors, section backgrounds, etc. */
-/* .btn-custom-color {
-    background-color: #1a73e8;
-    border-color: #1a73e8;
-    color: white;
+/* Add custom styles for filter buttons if needed (e.g., active state) */
+/* .filter-btn.active {
+    // Add styles for active button, e.g.,
+    // background-color: #0d6efd !important; // Bootstrap primary blue
+    // color: white !important;
+    // border-color: #0d6efd !important;
 } */
 
-/* Style for the breakpoint debugger if you add it for testing */
-/* .layout-debugger { ... } */
+
+/* You can add custom styles here for specific elements or overrides */
