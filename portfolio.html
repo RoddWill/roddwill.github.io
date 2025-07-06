@@ -43,106 +43,42 @@
         </div>
     </nav>
 
-    <main class="container py-5" id="work-grid-section">
-        <h1 class="fw-bold mb-4 text-center" data-aos="fade-down">Portfolio</h1>
+    <main class="container py-5">
+        <h1 class="fw-bold mb-4 text-center" data-aos="fade-down">My Work & Contributions</h1>
         <p class="lead text-center mb-5" data-aos="fade-up" data-aos-delay="100">
-            Explore my projects, publications, and applications in AI/ML, focusing on engineering and healthcare domains.
+            Explore my diverse work in Artificial Intelligence and Machine Learning, spanning practical applications, academic research, and community contributions.
         </p>
 
-        <div class="mb-5 text-center" data-aos="fade-up" data-aos-delay="200">
-            <button class="btn btn-primary mx-1 my-1 filter-btn" data-filter="all">All Work</button>
-            <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="engineering">Engineering</button>
-            <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="healthcare">Healthcare</button>
-            <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="journal">Journals</button>
-            <button class="btn btn-outline-secondary mx-1 my-1 filter-btn" data-filter="conference">Conferences</button>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="work-grid">
-
-            <div class="col work-item" data-aos="zoom-in" data-category="engineering">
-                <div class="card h-100">
-                    <img src="assets/project1-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Project 1 Thumbnail" style="height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Predictive Maintenance System</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Engineering | Predictive Modeling</p>
-                        <p class="card-text">
-                            Developed and deployed an end-to-end ML pipeline for predicting equipment failures in a manufacturing environment.
-                            Utilized Time Series analysis and XGBoost.
-                        </p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
-                            <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
-                        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card text-center shadow-sm w-100">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title fw-bold display-6 mb-3"><i class="fas fa-project-diagram text-primary me-2"></i> Projects</h5>
+                        <p class="card-text">Dive into my practical AI/ML projects, including real-world applications in engineering and healthcare.</p>
+                        <a href="projects.html" class="btn btn-primary mt-auto">View Projects</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col work-item" data-aos="zoom-in" data-aos-delay="100" data-category="healthcare">
-                <div class="card h-100">
-                    <img src="assets/project2-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Project 2 Thumbnail" style="height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Patient Risk Stratification Model</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Healthcare | Classification</p>
-                        <p class="card-text">
-                            Built a classification model to stratify patients based on their risk of developing a specific chronic disease using EHR data.
-                            Focused on model interpretability.
-                        </p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
-                        </div>
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card text-center shadow-sm w-100">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title fw-bold display-6 mb-3"><i class="fas fa-book-open text-success me-2"></i> Publications</h5>
+                        <p class="card-text">Explore my academic contributions, including journal papers, conference proceedings, and presentations.</p>
+                        <a href="publications.html" class="btn btn-success mt-auto">View Publications</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col work-item" data-aos="zoom-in" data-aos-delay="200" data-category="journal">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Title of Healthcare Journal Paper</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Authors: Your Name, Co-author 1 | Journal | Year</p>
-                        <p class="card-text">
-                            Published research on applying ML for [specific healthcare task] in [Journal Name].
-                            Focused on [key contribution].
-                        </p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fas fa-file-pdf me-1"></i> PDF</a>
-                        </div>
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card text-center shadow-sm w-100">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title fw-bold display-6 mb-3"><i class="fas fa-trophy text-info me-2"></i> Achievements</h5>
+                        <p class="card-text">Discover my professional achievements, awards, and contributions as an academic journal reviewer.</p>
+                        <a href="achievements.html" class="btn btn-info mt-auto">View Achievements</a>
                     </div>
                 </div>
             </div>
-
-            <div class="col work-item" data-aos="zoom-in" data-aos-delay="300" data-category="conference">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Title of Engineering Conference Presentation</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Authors: Your Name | Conference | Year</p>
-                        <p class="card-text">
-                            Presented findings on using ML for [specific engineering task] at [Conference Name].
-                            Discussed [key aspect].
-                        </p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i class="fas fa-slideshare me-1"></i> Slides</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col work-item" data-aos="zoom-in" data-aos-delay="400" data-category="engineering">
-                <div class="card h-100">
-                    <img src="assets/application1-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Application 1 Thumbnail" style="height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Real-time Anomaly Detection App</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Engineering | Anomaly Detection</p>
-                        <p class="card-text">
-                            Developed a web application for real-time anomaly detection on streaming sensor data using a pre-trained model.
-                        </p>
-                        <div class="mt-3">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fas fa-external-link-alt me-1"></i> Live App</a>
-                            <a href="#" class="btn btn-outline-dark btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
@@ -156,79 +92,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
-        // Initialize AOS
         AOS.init({ duration: 800, once: true });
-
-        // Simplified Portfolio Filtering Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const workItems = document.querySelectorAll('.work-item');
-            const workGrid = document.getElementById('work-grid');
-
-            // Set a default category (e.g., "all")
-            let activeFilter = 'all'; 
-
-            function applyFilter() {
-                // Determine the currently active filters for smooth transition
-                const currentVisibleItems = Array.from(workItems).filter(item => item.style.display !== 'none');
-                const nextVisibleItems = [];
-
-                workItems.forEach(item => {
-                    const itemCategory = item.dataset.category;
-
-                    if (activeFilter === 'all' || itemCategory === activeFilter) {
-                        nextVisibleItems.push(item);
-                        // Add fade-in effect if not already visible
-                        if (!currentVisibleItems.includes(item)) {
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.9)';
-                            item.style.display = 'block'; // Make it visible before transition
-                            setTimeout(() => {
-                                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 50); // Small delay to ensure display:block applies
-                        } else {
-                            item.style.display = 'block'; // Keep visible
-                        }
-                    } else {
-                        // Hide items with fade-out
-                        if (currentVisibleItems.includes(item)) {
-                            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.9)';
-                            item.addEventListener('transitionend', function handler() {
-                                item.style.display = 'none';
-                                item.removeEventListener('transitionend', handler);
-                            }, { once: true });
-                        } else {
-                             item.style.display = 'none'; // Already hidden or no transition needed
-                        }
-                    }
-                });
-
-                // Update active button styling
-                filterButtons.forEach(button => {
-                    if (button.dataset.filter === activeFilter) {
-                        button.classList.remove('btn-outline-secondary');
-                        button.classList.add('btn-primary');
-                    } else {
-                        button.classList.remove('btn-primary');
-                        button.classList.add('btn-outline-secondary');
-                    }
-                });
-            }
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    activeFilter = button.dataset.filter;
-                    applyFilter();
-                });
-            });
-
-            // Initial filter application on page load
-            applyFilter();
-        });
     </script>
 </body>
 </html>
