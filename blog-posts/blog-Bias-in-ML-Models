@@ -2,200 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Bias in ML Models</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        h1 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        section {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        p {
-            margin-bottom: 10px;
-        }
-        .date {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
-            display: block;
-        }
-        .hashtags {
-            margin-top: 30px;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-        .comment-section {
-            margin-top: 40px;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-        }
-        .comment-section h2 {
-            color: #34495e;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Understanding Bias in ML Models: Build Fairer AI Systems - AI/ML Engineer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css"> 
 </head>
 <body>
+    <header class="bg-light py-2 border-bottom">
+        <div class="container text-center text-secondary">
+            <a href="mailto:you@example.com" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fas fa-envelope me-1"></i> <span class="d-none d-md-inline">Email</span></a>
+            <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-google-scholar me-1"></i> <span class="d-none d-md-inline">Scholar</span></a>
+            <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-github me-1"></i> <span class="d-none d-md-inline">GitHub</span></a>
+            <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-linkedin me-1"></i> <span class="d-none d-md-inline">LinkedIn</span></a>
+            <a href="YOUR_TWITTER_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-twitter me-1"></i> <span class="d-none d-md-inline">Twitter</span></a>
+            <a href="YOUR_MEDIUM_URL" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary mx-2 hover-primary"><i class="fab fa-medium me-1"></i> <span class="d-none d-md-inline">Medium</span></a>
+        </div>
+    </header>
 
-    <h1>Understanding Bias in ML Models: Identifying and Mitigating for Fairer AI ✨</h1>
-    <span class="date">July 7, 2025</span>
-
-    <section>
-        <p>In the rapidly evolving landscape of artificial intelligence, <strong>Machine Learning (ML) models</strong> are no longer just tools for efficiency; they are integral to decisions that shape our lives, from loan applications and hiring to healthcare diagnoses and even criminal justice. 🏥⚖️ With this pervasive influence comes a critical responsibility: ensuring these powerful systems are fair, equitable, and free from harmful biases. </p>
-        <p>The concept of "bias" in ML isn't always about malicious intent. More often than not, it's an insidious byproduct of the data we feed these models and the assumptions embedded in their design. 🔍 Yet, its impact can be profound, leading to discriminatory outcomes and eroding trust in AI. 📉</p>
-        <p>So, how do we understand, identify, and mitigate bias to build truly fairer AI systems? 🤔</p>
-    </section>
-
-    <section>
-        <h2>Where Does Bias Come From? 🕵️‍♀️</h2>
-        <p>Understanding the origins of bias is the first step towards addressing it. Here are some common culprits:</p>
-        <ol>
-            <li>
-                <h3>Data Bias (The Most Common Culprit): 📊</h3>
-                <ul>
-                    <li><strong>Historical Bias:</strong> Our world is full of historical inequities. If a dataset reflects these historical biases (e.g., predominantly male executives in historical hiring data), an ML model trained on it will learn and perpetuate those biases. 🕰️</li>
-                    <li><strong>Selection Bias:</strong> When the data used to train the model doesn't accurately represent the real-world population it will interact with. For example, a facial recognition system trained primarily on lighter skin tones will perform poorly on darker skin tones. 📸</li>
-                    <li><strong>Measurement Bias:</strong> Inaccuracies or inconsistencies in how data is collected or measured, leading to skewed representations. 📏</li>
-                    <li><strong>Reporting Bias:</strong> When certain outcomes or attributes are more likely to be reported than others. 📝</li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"> 
+                <img src="../assets/logo.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top me-2"> AI/ML Engineer
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About / CV</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="../portfolio.html">Portfolio</a></li> 
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../blogs.html">Blogs</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="../faqs.html">FAQs</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li> 
                 </ul>
-            </li>
-            <li>
-                <h3>Algorithm Bias: ⚙️</h3>
-                <p>While less common than data bias, the choice of algorithm or its specific configuration can sometimes amplify existing biases or introduce new ones. For instance, an algorithm designed to optimize for a single metric might inadvertently disadvantage certain subgroups if that metric is itself biased.</p>
-            </li>
-            <li>
-                <h3>Human Bias in Design and Deployment: 🧑‍💻👩‍🔬</h3>
-                <p>The biases of the engineers, data scientists, and product managers involved in developing and deploying ML systems can inadvertently creep into model design, feature selection, and even how model outputs are interpreted.</p>
-            </li>
-        </ol>
-    </section>
+            </div>
+        </div>
+    </nav>
 
-    <section>
-        <h2>Identifying Bias: More Than Just Looking at the Numbers 👀</h2>
-        <p>Identifying bias requires a multi-faceted approach, moving beyond simple accuracy metrics to delve into the model's performance across different groups.</p>
-        <ol>
-            <li>
-                <h3>Disaggregated Performance Metrics: 📈</h3>
-                <p>Don't just look at overall accuracy, precision, or recall. Break down these metrics by <strong>sensitive attributes</strong> (e.g., gender, race, age, socioeconomic status). Are there significant differences in performance between groups? For example, is your loan approval model rejecting a disproportionate number of applications from a specific demographic group, even if the overall accuracy seems high? 🧐</p>
-            </li>
-            <li>
-                <h3>Fairness Metrics:</h3>
-                <p>Over the past few years, a suite of fairness metrics has emerged to quantify different aspects of fairness. These include:</p>
+    <main class="container py-5">
+        <article>
+            <header class="mb-4 text-center" data-aos="fade-up">
+                <h1 class="fw-bold display-5">Understanding Bias in ML Models: How to identify and mitigate bias to build fairer AI systems. ⚖️</h1>
+                <p class="lead text-muted mt-3">Artificial Intelligence and Machine Learning models are rapidly transforming every facet of our lives, from personalized recommendations to critical decisions in healthcare and finance. While the potential for efficiency and innovation is immense, there's a growing awareness of a critical challenge: bias in ML models. If left unaddressed, this bias can perpetuate and even amplify societal inequalities, leading to unfair or discriminatory outcomes. 🤔</p>
+                <p class="text-muted small">Published: July 8, 2025</p>
+            </header>
+
+            <section class="blog-content mb-5" data-aos="fade-in">
+                <p>But what exactly is "bias" in an ML model, and how can we build systems that are truly fair? Let's dive in.</p>
+
+                <h2 class="fw-bold mt-5 mb-3">Where Does Bias Come From? The Roots of Unfairness 🌳</h2>
+                <p>Bias in ML isn't about conscious prejudice from the algorithm itself. It typically stems from the data it's trained on or the way the model is designed and deployed.</p>
+
+                <h3>Data Bias (The Most Common Culprit!) 📊</h3>
                 <ul>
-                    <li><strong>Demographic Parity/Statistical Parity:</strong> Ensuring that the proportion of positive outcomes is roughly equal across different groups. 🤝</li>
-                    <li><strong>Equal Opportunity:</strong> Ensuring that the true positive rate (e.g., correctly identifying someone who <em>should</em> be approved) is equal across groups. ✅</li>
-                    <li><strong>Equalized Odds:</strong> Ensuring both the true positive rate and false positive rate are equal across groups. ⚖️</li>
-                    <li><strong>Predictive Parity:</strong> Ensuring that the precision (positive predictive value) is equal across groups. 🎯</li>
-                    <li><strong>Causal Inference:</strong> More advanced techniques are now being employed to understand the causal relationships between input features and model outcomes, helping to pinpoint where discriminatory effects might arise. 🔗</li>
+                    <li>**Historical Bias:** Our world is full of historical and societal biases. If your training data reflects these biases (e.g., historical hiring records showing gender imbalance in certain roles), the model will learn and perpetuate them.</li>
+                    <li>**Selection Bias:** When the data collected doesn't accurately represent the real-world population the model will be applied to. For example, a facial recognition dataset primarily featuring lighter skin tones will perform poorly on darker skin tones. 📸</li>
+                    <li>**Measurement Bias:** Inaccuracies or inconsistencies in how data is recorded. If a sensor consistently under-reports data for a certain group, the model will learn from this skewed information.</li>
+                    <li>**Labeling Bias:** Human annotators, even with good intentions, can inject their own biases when labeling data. If "creditworthiness" labels are influenced by race, the model will learn this association. 💰</li>
                 </ul>
-            </li>
-            <li>
-                <h3>Explainable AI (XAI) Techniques: 🧠💡</h3>
-                <p>Tools that help us understand <em>why</em> a model made a particular decision are crucial. Techniques like SHAP (SHapley Additive exPlanations) and LIME (Local Interpretable Model-agnostic Explanations) can reveal which features are driving predictions for different individuals, potentially highlighting a reliance on biased features.</p>
-            </li>
-            <li>
-                <h3>Adversarial Testing and Stress Testing: 💥🧪</h3>
-                <p>Actively trying to "break" the model by feeding it carefully constructed inputs that might expose weaknesses or biases.</p>
-            </li>
-        </ol>
-    </section>
 
-    <section>
-        <h2>Mitigating Bias: A Multi-pronged Strategy 🛡️</h2>
-        <p>Mitigating bias is not a one-time fix but an ongoing process integrated throughout the ML lifecycle.</p>
-        <ol>
-            <li>
-                <h3>Data-Centric Approaches: 💾</h3>
+                <h3>Algorithmic/Modeling Bias ⚙️</h3>
                 <ul>
-                    <li><strong>Data Collection & Curation:</strong> Actively work to collect diverse and representative datasets. This might involve oversampling underrepresented groups or seeking out new data sources. 🌍</li>
-                    <li><strong>Data Augmentation:</strong> Strategically adding synthetic data or transforming existing data to create more balanced representations. ✨</li>
-                    <li><strong>Bias Detection & Remediation in Data:</strong> Tools and techniques are evolving to automatically detect and flag potential biases in datasets <em>before</em> model training. This includes identifying imbalanced distributions or proxy features for sensitive attributes. 🚨</li>
-                    <li><strong>Feature Engineering & Selection:</strong> Carefully selecting features to avoid those that are directly discriminatory or serve as proxies for sensitive attributes. Consider debiasing techniques at the feature level. 🛠️</li>
+                    <li>**Algorithm Design:** Some algorithms can inherently amplify small biases present in the data more than others.</li>
+                    <li>**Feature Engineering:** If sensitive attributes (like race or gender) or proxies for them (like zip code or specific name patterns) are used as features, or if features are engineered in a biased way, the model can become discriminatory.</li>
                 </ul>
-            </li>
-            <li>
-                <h3>Algorithmic Approaches: 💻</h3>
+
+                <h3>Human Bias (During Deployment/Interpretation) 🧑‍💻</h3>
+                <p>Even a debiased model can be misused or misinterpreted by humans, leading to biased outcomes in practice. Understanding the model's limitations and context is crucial.</p>
+
+                <h2 class="fw-bold mt-5 mb-3">Why Should We Care? The Impact of Bias 💥</h2>
+                <p>The consequences of biased ML models are not theoretical; they have real-world implications:</p>
                 <ul>
-                    <li><strong>Pre-processing Techniques:</strong> Modifying the data before training to reduce bias (e.g., re-weighting samples). 🧹</li>
-                    <li><strong>In-processing Techniques:</strong> Modifying the learning algorithm itself to incorporate fairness constraints during training. 🧠</li>
-                    <li><strong>Post-processing Techniques:</strong> Adjusting the model's predictions after training to achieve desired fairness metrics. 📊</li>
+                    <li>**Financial Services:** Discriminatory loan approvals or credit scoring.</li>
+                    <li>**Hiring & Recruitment:** AI tools rejecting qualified candidates from underrepresented groups. 🧑‍💼</li>
+                    <li>**Healthcare:** Models misdiagnosing or under-treating certain demographic groups due to biased training data. 🩺</li>
+                    <li>**Criminal Justice:** Biased risk assessment tools leading to unfair sentencing or parole decisions.</li>
+                    <li>**Customer Service:** Chatbots responding differently or less effectively to certain accents or dialects.</li>
                 </ul>
-            </li>
-            <li>
-                <h3>Human-in-the-Loop & Governance: 🤝</h3>
+                <p>Beyond individual harm, unchecked bias erodes trust in AI and undermines its potential to be a force for good.</p>
+
+                <h2 class="fw-bold mt-5 mb-3">Identifying Bias: The First Step to Mitigation 🔍</h2>
+                <p>Before you can fix bias, you need to find it. This often involves a multi-faceted approach:</p>
+
+                <h3>Data Audits & Exploration:</h3>
                 <ul>
-                    <li><strong>Ethical AI Guidelines & Frameworks:</strong> Establish clear organizational policies and ethical guidelines for AI development and deployment. 📜</li>
-                    <li><strong>Diverse Development Teams:</strong> Teams with diverse backgrounds and perspectives are more likely to identify and address potential biases. 👥</li>
-                    <li><strong>Regular Auditing & Monitoring:</strong> Continuously monitor deployed models for signs of bias drift and perform regular audits. This includes human oversight and review of critical decisions made by AI systems. ⏱️</li>
-                    <li><strong>Feedback Loops:</strong> Implement mechanisms for users and affected communities to provide feedback on AI system performance, especially concerning fairness. 🗣️</li>
-                    <li><strong>Transparency & Explainability:</strong> Communicate clearly about how models work, their limitations, and their potential for bias. 💡</li>
+                    <li>**Demographic Analysis:** Understand the distribution of sensitive attributes in your dataset. Is it representative?</li>
+                    <li>**Disparate Impact Analysis:** Look for significant differences in outcomes across different groups (e.g., is your model's prediction of "loan approved" drastically different for two racial groups?). The "80% rule" (where the acceptance rate for a minority group should not be less than 80% of the majority group) is a common heuristic.</li>
+                    <li>**Visualizations:** Plot data distributions, feature correlations, and outcome discrepancies across groups. 📈</li>
                 </ul>
-            </li>
-        </ol>
-    </section>
 
-    <section>
-        <h2>The Future of Fair AI 🚀</h2>
-        <p>Building fairer AI systems is an ongoing journey that requires technical expertise, ethical considerations, and a commitment to continuous improvement. As ML models become even more sophisticated and ubiquitous, our ability to identify and mitigate bias will define the trustworthiness and societal impact of AI. By prioritizing fairness at every stage, we can move closer to an AI future that truly benefits everyone. 🌐</p>
-    </section>
+                <h3>Fairness Metrics (Beyond Accuracy!) 🎯</h3>
+                <p>Traditional metrics like accuracy, precision, and recall don't tell the whole story when it comes to fairness. You need specific fairness metrics:</p>
+                <ul>
+                    <li>**Demographic Parity:** Ensures that the proportion of positive outcomes is roughly the same across different groups.</li>
+                    <li>**Equalized Odds:** Aims for equal true positive rates and false positive rates across groups.</li>
+                    <li>**Predictive Equality:** Focuses on equal false positive rates.</li>
+                    <li>**Predictive Parity:** Focuses on equal positive predictive values.</li>
+                </ul>
+                <p>Evaluate your model's performance on subgroups of your data (e.g., calculating recall for males vs. females, different age groups).</p>
 
-    <div class="hashtags">
-        <p>#MLBias #Ethics</p>
-    </div>
+                <h3>Explainable AI (XAI) 🗣️</h3>
+                <p>Techniques like SHAP (SHapley Additive exPlanations) values or LIME (Local Interpretable Model-agnostic Explanations) can help you understand *why* your model made a particular prediction. This insight can reveal if the model is relying on biased features or making decisions based on sensitive attributes, even indirectly.</p>
 
-    <div class="comment-section">
-        <h2>Comments</h2>
-        <p>Since GitHub Pages are static sites, they do not inherently support dynamic comment sections. To enable comments, you will typically need to integrate a third-party service. Here are some popular options:</p>
-        <ul>
-            <li><strong>Disqus:</strong> A widely used platform that provides a comment section embeddable on static sites. You'll need to sign up for an account and follow their instructions to get an embed code for your specific site.</li>
-            <li><strong>Hyvor Talk:</strong> Another robust comment system designed for static sites, offering features like reactions, spam detection, and moderation.</li>
-            <li><strong>utterances:</strong> A lightweight comment widget built on GitHub issues. This is a great option if you want to keep your comments within the GitHub ecosystem.</li>
-            <li><strong>Commento:</strong> An open-source, fast, and privacy-focused comment system.</li>
-        </ul>
-        <p>To implement one of these, you would typically add a small JavaScript snippet provided by the service into your HTML file at this point. For example, for Disqus, it might look something like this (replace `YOUR_DISQUS_SHORTNAME` with your actual shortname):</p>
-        <pre><code>&lt;div id="disqus_thread"&gt;&lt;/div&gt;
-&lt;script&gt;
-    /**
-    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-&lt;/script&gt;
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</code></pre>
-        <p>Choose the service that best fits your needs and integrate its provided code here.</p>
-    </div>
+                <h2 class="fw-bold mt-5 mb-3">Mitigating Bias: Building Fairer Systems 🛠️</h2>
+                <p>Once identified, various techniques can help mitigate bias. They can be applied at different stages of the ML pipeline:</p>
 
+                <h3>Pre-processing (Data-level Techniques):</h3>
+                <ul>
+                    <li>**Resampling:** Oversampling underrepresented groups or undersampling overrepresented groups to balance the dataset.</li>
+                    <li>**Re-weighting:** Assigning different weights to data points to reduce the influence of biased samples.</li>
+                    <li>**Data Augmentation:** Generating synthetic data for minority groups to improve representation.</li>
+                </ul>
+
+                <h3>In-processing (Algorithm-level Techniques):</h3>
+                <ul>
+                    <li>**Fair-aware Algorithms:** Using algorithms specifically designed with fairness constraints (e.g., algorithms that optimize for both accuracy and a fairness metric simultaneously).</li>
+                    <li>**Adversarial Debiasing:** Training a model with an "adversary" that tries to predict the sensitive attribute. The main model is then trained to be unable to predict the sensitive attribute, thus becoming fairer.</li>
+                </ul>
+
+                <h3>Post-processing (Prediction-level Techniques):</h3>
+                <ul>
+                    <li>**Thresholding Adjustments:** Adjusting the prediction threshold for different groups to equalize fairness metrics after the model has made its initial predictions.</li>
+                    <li>**Calibrated Equal Odds:** Ensuring that predicted probabilities align with actual outcomes across different groups.</li>
+                </ul>
+
+                <h3>Human-in-the-Loop & Ethical Guidelines:</h3>
+                <ul>
+                    <li>Always include human oversight and feedback loops, especially for high-stakes decisions.</li>
+                    <li>Establish clear ethical AI principles from the project's inception, guiding data collection, model development, and deployment. 🤝</li>
+                </ul>
+
+                <h2 class="fw-bold mt-5 mb-3">A Continuous Journey, Not a Destination 🔄</h2>
+                <p>Building fairer AI systems is not a one-time fix. Bias can re-emerge as data distributions shift or as models are retrained. It requires:</p>
+                <ul>
+                    <li>**Continuous Monitoring:** Regularly monitoring for bias in production.</li>
+                    <li>**Regular Re-evaluation:** Periodically re-evaluating fairness metrics.</li>
+                    <li>**Interdisciplinary Collaboration:** Engaging data scientists, domain experts, ethicists, and affected communities throughout the AI lifecycle.</li>
+                </ul>
+                <p>By proactively addressing bias, we can build AI systems that are not only powerful and efficient but also equitable, transparent, and trustworthy. The path to responsible AI is a shared responsibility! 🚀</p>
+            </section>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <a href="../blogs.html" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-2"></i> Back to Blogs</a>
+                <small class="text-muted">Tags: #MLBias, #Ethics</small>
+            </div>
+
+            <hr class="my-5">
+            <section id="comments-section" data-aos="fade-up">
+                <h2 class="fw-bold mb-4">Comments <i class="fas fa-comments text-primary ms-2"></i></h2>
+                <script src="https://utteranc.es/client.js"
+                    repo="RoddWill/blog-comments"  issue-term="pathname"
+                    theme="github-light"  crossorigin="anonymous"
+                    async>
+                </script>
+                <p class="text-muted small mt-3">Comments are powered by GitHub Issues. You need a GitHub account to comment.</p>
+            </section>
+            </article>  
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>© 2025 AI/ML Engineer Portfolio</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../assets/js/script.js"></script> 
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true });
+    </script>
 </body>
 </html>
