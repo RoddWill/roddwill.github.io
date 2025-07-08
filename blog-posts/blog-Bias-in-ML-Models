@@ -160,7 +160,11 @@
                 </script>
                 <p class="text-muted small mt-3">Comments are powered by GitHub Issues. You need a GitHub account to comment.</p>
             </section>
-            </article>  
+            <div class="d-flex justify-content-center mt-5 mb-4">
+                <a href="../blogs.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left me-2"></i> Return to All Blogs</a>
+            </div>
+
+        </article>  
     </main>
 
     <footer class="bg-dark text-white py-4">
