@@ -58,16 +58,16 @@
 
                 <h3>Data Bias (The Most Common Culprit!) 📊</h3>
                 <ul>
-                    <li>**Historical Bias:** Our world is full of historical and societal biases. If your training data reflects these biases (e.g., historical hiring records showing gender imbalance in certain roles), the model will learn and perpetuate them.</li>
-                    <li>**Selection Bias:** When the data collected doesn't accurately represent the real-world population the model will be applied to. For example, a facial recognition dataset primarily featuring lighter skin tones will perform poorly on darker skin tones. 📸</li>
-                    <li>**Measurement Bias:** Inaccuracies or inconsistencies in how data is recorded. If a sensor consistently under-reports data for a certain group, the model will learn from this skewed information.</li>
-                    <li>**Labeling Bias:** Human annotators, even with good intentions, can inject their own biases when labeling data. If "creditworthiness" labels are influenced by race, the model will learn this association. 💰</li>
+                     <li><strong>Historical Bias:</strong> Our world is full of historical and societal biases. If your training data reflects these biases (e.g., historical hiring records showing gender imbalance in certain roles), the model will learn and perpetuate them.</li>
+                     <li><strong>Selection Bias:</strong> When the data collected doesn't accurately represent the real-world population the model will be applied to. For example, a facial recognition dataset primarily featuring lighter skin tones will perform poorly on darker skin tones. 📸</li>
+                     <li><strong>Measurement Bias:</strong> Inaccuracies or inconsistencies in how data is recorded. If a sensor consistently under-reports data for a certain group, the model will learn from this skewed information.</li>
+                     <li><strong>Labeling Bias:</strong> Human annotators, even with good intentions, can inject their own biases when labeling data. If "creditworthiness" labels are influenced by race, the model will learn this association. 💰</li>
                 </ul>
 
                 <h3>Algorithmic/Modeling Bias ⚙️</h3>
                 <ul>
-                    <li>**Algorithm Design:** Some algorithms can inherently amplify small biases present in the data more than others.</li>
-                    <li>**Feature Engineering:** If sensitive attributes (like race or gender) or proxies for them (like zip code or specific name patterns) are used as features, or if features are engineered in a biased way, the model can become discriminatory.</li>
+                     <li><strong>Algorithm Design:</strong> Some algorithms can inherently amplify small biases present in the data more than others.</li>
+                     <li><strong>Feature Engineering:</strong> If sensitive attributes (like race or gender) or proxies for them (like zip code or specific name patterns) are used as features, or if features are engineered in a biased way, the model can become discriminatory.</li>
                 </ul>
 
                 <h3>Human Bias (During Deployment/Interpretation) 🧑‍💻</h3>
@@ -76,11 +76,11 @@
                 <h2 class="fw-bold mt-5 mb-3">Why Should We Care? The Impact of Bias 💥</h2>
                 <p>The consequences of biased ML models are not theoretical; they have real-world implications:</p>
                 <ul>
-                    <li>**Financial Services:** Discriminatory loan approvals or credit scoring.</li>
-                    <li>**Hiring & Recruitment:** AI tools rejecting qualified candidates from underrepresented groups. 🧑‍💼</li>
-                    <li>**Healthcare:** Models misdiagnosing or under-treating certain demographic groups due to biased training data. 🩺</li>
-                    <li>**Criminal Justice:** Biased risk assessment tools leading to unfair sentencing or parole decisions.</li>
-                    <li>**Customer Service:** Chatbots responding differently or less effectively to certain accents or dialects.</li>
+                     <li><strong>Financial Services:</strong> Discriminatory loan approvals or credit scoring.</li>
+                     <li><strong>Hiring & Recruitment:</strong> AI tools rejecting qualified candidates from underrepresented groups. 🧑‍💼</li>
+                     <li><strong>Healthcare:</strong> Models misdiagnosing or under-treating certain demographic groups due to biased training data. 🩺</li>
+                     <li><strong>Criminal Justice:</strong> Biased risk assessment tools leading to unfair sentencing or parole decisions.</li>
+                     <li><strong>Customer Service:</strong> Chatbots responding differently or less effectively to certain accents or dialects.</li>
                 </ul>
                 <p>Beyond individual harm, unchecked bias erodes trust in AI and undermines its potential to be a force for good.</p>
 
@@ -89,18 +89,18 @@
 
                 <h3>Data Audits & Exploration:</h3>
                 <ul>
-                    <li>**Demographic Analysis:** Understand the distribution of sensitive attributes in your dataset. Is it representative?</li>
-                    <li>**Disparate Impact Analysis:** Look for significant differences in outcomes across different groups (e.g., is your model's prediction of "loan approved" drastically different for two racial groups?). The "80% rule" (where the acceptance rate for a minority group should not be less than 80% of the majority group) is a common heuristic.</li>
-                    <li>**Visualizations:** Plot data distributions, feature correlations, and outcome discrepancies across groups. 📈</li>
+                     <li><strong>Demographic Analysis:</strong> Understand the distribution of sensitive attributes in your dataset. Is it representative?</li>
+                     <li><strong>Disparate Impact Analysis:</strong> Look for significant differences in outcomes across different groups (e.g., is your model's prediction of "loan approved" drastically different for two racial groups?). The "80% rule" (where the acceptance rate for a minority group should not be less than 80% of the majority group) is a common heuristic.</li>
+                     <li><strong>Visualizations:</strong> Plot data distributions, feature correlations, and outcome discrepancies across groups. 📈</li>
                 </ul>
 
                 <h3>Fairness Metrics (Beyond Accuracy!) 🎯</h3>
                 <p>Traditional metrics like accuracy, precision, and recall don't tell the whole story when it comes to fairness. You need specific fairness metrics:</p>
                 <ul>
-                    <li>**Demographic Parity:** Ensures that the proportion of positive outcomes is roughly the same across different groups.</li>
-                    <li>**Equalized Odds:** Aims for equal true positive rates and false positive rates across groups.</li>
-                    <li>**Predictive Equality:** Focuses on equal false positive rates.</li>
-                    <li>**Predictive Parity:** Focuses on equal positive predictive values.</li>
+                     <li><strong>Demographic Parity:</strong> Ensures that the proportion of positive outcomes is roughly the same across different groups.</li>
+                     <li><strong>Equalized Odds:</strong> Aims for equal true positive rates and false positive rates across groups.</li>
+                     <li><strong>Predictive Equality:</strong> Focuses on equal false positive rates.</li>
+                     <li><strong>Predictive Parity:</strong> Focuses on equal positive predictive values.</li>
                 </ul>
                 <p>Evaluate your model's performance on subgroups of your data (e.g., calculating recall for males vs. females, different age groups).</p>
 
@@ -112,21 +112,21 @@
 
                 <h3>Pre-processing (Data-level Techniques):</h3>
                 <ul>
-                    <li>**Resampling:** Oversampling underrepresented groups or undersampling overrepresented groups to balance the dataset.</li>
-                    <li>**Re-weighting:** Assigning different weights to data points to reduce the influence of biased samples.</li>
-                    <li>**Data Augmentation:** Generating synthetic data for minority groups to improve representation.</li>
+                     <li><strong>Resampling:</strong> Oversampling underrepresented groups or undersampling overrepresented groups to balance the dataset.</li>
+                     <li><strong>Re-weighting:</strong> Assigning different weights to data points to reduce the influence of biased samples.</li>
+                     <li><strong>Data Augmentation:</strong> Generating synthetic data for minority groups to improve representation.</li>
                 </ul>
 
                 <h3>In-processing (Algorithm-level Techniques):</h3>
                 <ul>
-                    <li>**Fair-aware Algorithms:** Using algorithms specifically designed with fairness constraints (e.g., algorithms that optimize for both accuracy and a fairness metric simultaneously).</li>
-                    <li>**Adversarial Debiasing:** Training a model with an "adversary" that tries to predict the sensitive attribute. The main model is then trained to be unable to predict the sensitive attribute, thus becoming fairer.</li>
+                     <li><strong>Fair-aware Algorithms:</strong> Using algorithms specifically designed with fairness constraints (e.g., algorithms that optimize for both accuracy and a fairness metric simultaneously).</li>
+                     <li><strong>Adversarial Debiasing:</strong> Training a model with an "adversary" that tries to predict the sensitive attribute. The main model is then trained to be unable to predict the sensitive attribute, thus becoming fairer.</li>
                 </ul>
 
                 <h3>Post-processing (Prediction-level Techniques):</h3>
                 <ul>
-                    <li>**Thresholding Adjustments:** Adjusting the prediction threshold for different groups to equalize fairness metrics after the model has made its initial predictions.</li>
-                    <li>**Calibrated Equal Odds:** Ensuring that predicted probabilities align with actual outcomes across different groups.</li>
+                     <li><strong>Thresholding Adjustments:</strong> Adjusting the prediction threshold for different groups to equalize fairness metrics after the model has made its initial predictions.</li>
+                     <li><strong>Calibrated Equal Odds:</strong> Ensuring that predicted probabilities align with actual outcomes across different groups.</li>
                 </ul>
 
                 <h3>Human-in-the-Loop & Ethical Guidelines:</h3>
@@ -138,9 +138,9 @@
                 <h2 class="fw-bold mt-5 mb-3">A Continuous Journey, Not a Destination 🔄</h2>
                 <p>Building fairer AI systems is not a one-time fix. Bias can re-emerge as data distributions shift or as models are retrained. It requires:</p>
                 <ul>
-                    <li>**Continuous Monitoring:** Regularly monitoring for bias in production.</li>
-                    <li>**Regular Re-evaluation:** Periodically re-evaluating fairness metrics.</li>
-                    <li>**Interdisciplinary Collaboration:** Engaging data scientists, domain experts, ethicists, and affected communities throughout the AI lifecycle.</li>
+                     <li><strong>Continuous Monitoring:</strong> Regularly monitoring for bias in production.</li>
+                     <li><strong>Regular Re-evaluation:</strong> Periodically re-evaluating fairness metrics.</li>
+                     <li><strong>Interdisciplinary Collaboration:</strong> Engaging data scientists, domain experts, ethicists, and affected communities throughout the AI lifecycle.</li>
                 </ul>
                 <p>By proactively addressing bias, we can build AI systems that are not only powerful and efficient but also equitable, transparent, and trustworthy. The path to responsible AI is a shared responsibility! 🚀</p>
             </section>
