@@ -46,64 +46,218 @@
     <main class="container py-5">
         <h1 class="fw-bold mb-4 text-center" data-aos="fade-down">AI/ML Projects & Applications</h1>
         <p class="lead text-center mb-5" data-aos="fade-up" data-aos-delay="100">
-            Here's a selection of my practical projects demonstrating the application of AI and Machine Learning in engineering and healthcare.
+            Here's a selection of my practical projects demonstrating the application of AI and Machine Learning in diverse fields.
         </p>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="work-grid">
+        <ul class="nav nav-tabs justify-content-center mb-4" id="projectTabs" role="tablist" data-aos="fade-up" data-aos-delay="200">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="healthcare-tab" data-bs-toggle="tab" data-bs-target="#healthcare-projects" type="button" role="tab" aria-controls="healthcare-projects" aria-selected="true">Healthcare AI Applications</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="spatial-environmental-tab" data-bs-toggle="tab" data-bs-target="#spatial-environmental-projects" type="button" role="tab" aria-controls="spatial-environmental-projects" aria-selected="false">Spatial Analysis & Environmental AI</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="civil-engineering-tab" data-bs-toggle="tab" data-bs-target="#civil-engineering-projects" type="button" role="tab" aria-controls="civil-engineering-projects" aria-selected="false">Civil Engineering AI Applications</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ongoing-tab" data-bs-toggle="tab" data-bs-target="#ongoing-projects" type="button" role="tab" aria-controls="ongoing-projects" aria-selected="false">Ongoing Projects</button>
+            </li>
+        </ul>
 
-            <div class="col d-flex align-items-stretch" data-aos="zoom-in">
-                <div class="card h-100">
-                    <img src="assets/project1-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Project 1 Thumbnail" style="height: 200px;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Geostatistical Spatial Interpolation Enhanced with AI Regression Models</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Engineering | Spatial INterpolation Modeling</p>
-                        <p class="card-text">
-                            Developed and deployed an end-to-end geostatistical spatial interpolation enhanced with AI regression models.
-                            Utilized AI models for increased accuracy in spatial interpolation.
-                        </p>
-                        <div class="mt-auto pt-3">
-                            <a href="https://github.com/RoddWill/AIML-Spatial-Interpolation" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
-                            <a href="https://github.com/RoddWill/AIML-Spatial-Interpolation/blob/main/AI_SI_03.ipynb" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+        <div class="tab-content" id="projectTabsContent">
+            <div class="tab-pane fade show active" id="healthcare-projects" role="tabpanel" aria-labelledby="healthcare-tab">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in">
+                        <div class="card h-100">
+                            <img src="assets/project2-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Patient Risk Stratification" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Patient Risk Stratification Model (Heart Disease)</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Healthcare | Classification</p>
+                                <p class="card-text">
+                                    Built a classification model to stratify patients based on their risk of developing chronic diseases, including heart conditions, using Electronic Health Record (EHR) data. Focused on model interpretability.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card h-100">
+                            <img src="assets/placeholder-brain-ct.jpg" class="card-img-top object-fit-cover" alt="Brain CT Analysis" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">AI-Powered Brain CT Image Analysis for Anomaly Detection</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Healthcare | Image Processing</p>
+                                <p class="card-text">
+                                    Developed a deep learning model to accurately identify and segment abnormalities in brain CT scans, aiding early diagnosis of neurological conditions. Utilized CNNs and advanced image processing techniques.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card h-100">
-                    <img src="assets/project2-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Project 2 Thumbnail" style="height: 200px;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Patient Risk Stratification Model</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Healthcare | Classification</p>
-                        <p class="card-text">
-                            Built a classification model to stratify patients based on their risk of developing a specific chronic disease using EHR data.
-                            Focused on model interpretability.
-                        </p>
-                        <div class="mt-auto pt-3">
-                            <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+            <div class="tab-pane fade" id="spatial-environmental-projects" role="tabpanel" aria-labelledby="spatial-environmental-tab">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in">
+                        <div class="card h-100">
+                            <img src="assets/project1-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Spatial Interpolation" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Geostatistical Spatial Interpolation Enhanced with AI Regression Models</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Engineering | Spatial Interpolation Modeling</p>
+                                <p class="card-text">
+                                    Developed and deployed an end-to-end geostatistical spatial interpolation system, significantly enhanced with advanced AI regression models for increased accuracy in predicting spatial phenomena.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="https://github.com/RoddWill/AIML-Spatial-Interpolation" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+                                    <a href="https://github.com/RoddWill/AIML-Spatial-Interpolation/blob/main/AI_SI_03.ipynb" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card h-100">
+                            <img src="assets/placeholder-weather-ai.jpg" class="card-img-top object-fit-cover" alt="Weather AI" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Predictive Weather Modeling using Time-Series AI</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Environmental Science | Time-Series Forecasting</p>
+                                <p class="card-text">
+                                    Implemented AI models (e.g., LSTMs, Transformers) to forecast localized weather patterns, including temperature and precipitation, offering crucial data for agricultural planning and logistical optimization.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card h-100">
+                            <img src="assets/application1-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Anomaly Detection" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Real-time Environmental Anomaly Detection App</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Environmental Monitoring | Anomaly Detection</p>
+                                <p class="card-text">
+                                    Developed a web application for real-time anomaly detection on streaming environmental sensor data, enabling proactive identification of unusual patterns and potential issues.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fas fa-external-link-alt me-1"></i> Live App</a>
+                                    <a href="#" class="btn btn-outline-dark btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
-                <div class="card h-100">
-                    <img src="assets/application1-thumbnail.jpg" class="card-img-top object-fit-cover" alt="Application 1 Thumbnail" style="height: 200px;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Real-time Anomaly Detection App</h5>
-                        <p class="card-subtitle mb-2 text-muted small">Engineering | Anomaly Detection</p>
-                        <p class="card-text">
-                            Developed a web application for real-time anomaly detection on streaming sensor data using a pre-trained model.
-                        </p>
-                        <div class="mt-auto pt-3">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fas fa-external-link-alt me-1"></i> Live App</a>
-                            <a href="#" class="btn btn-outline-dark btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+            <div class="tab-pane fade" id="civil-engineering-projects" role="tabpanel" aria-labelledby="civil-engineering-tab">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in">
+                        <div class="card h-100">
+                            <img src="assets/placeholder-concrete.jpg" class="card-img-top object-fit-cover" alt="Concrete Strength" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Machine Learning for Concrete Compressive Strength Prediction</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Civil Engineering | Material Science</p>
+                                <p class="card-text">
+                                    Built and deployed machine learning models to accurately predict the compressive strength of concrete based on various mix design parameters, leading to optimized material usage and enhanced structural integrity.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card h-100">
+                            <img src="assets/placeholder-uhpc.jpg" class="card-img-top object-fit-cover" alt="UHPC Design" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">AI-Driven Design of Ultra-High Performance Concrete (UHPC)</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Civil Engineering | Advanced Materials</p>
+                                <p class="card-text">
+                                    Leveraged advanced AI algorithms to explore and optimize complex mix designs for Ultra-High Performance Concrete (UHPC), facilitating the development of materials with superior strength and durability properties.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card h-100">
+                            <img src="assets/placeholder-soil.jpg" class="card-img-top object-fit-cover" alt="Soil Compaction" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">AI-Optimized Soil Compaction and Compression Parameters</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Civil Engineering | Geotechnical Engineering</p>
+                                <p class="card-text">
+                                    Developed an AI system to accurately predict and optimize soil compaction and compression parameters for civil engineering projects, leading to improved construction efficiency, stability, and cost savings.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
+            <div class="tab-pane fade" id="ongoing-projects" role="tabpanel" aria-labelledby="ongoing-tab">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in">
+                        <div class="card h-100">
+                            <img src="assets/placeholder-civil-suite.jpg" class="card-img-top object-fit-cover" alt="Civil Engineering AI Suite" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Civil Engineering AI Suite (Ongoing Development)</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Civil Engineering | Full Stack AI</p>
+                                <p class="card-text">
+                                    Developing a comprehensive AI suite for civil engineering applications, encompassing modules for structural analysis, material optimization, and construction planning using advanced machine learning techniques.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub (WIP)</a>
+                                    <a href="#" class="btn btn-outline-info btn-sm"><i class="fas fa-info-circle me-1"></i> Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card h-100">
+                            <img src="assets/placeholder-fitness-app.jpg" class="card-img-top object-fit-cover" alt="Fitness and Wellness App" style="height: 200px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">AI-Powered Fitness and Wellness App (Ongoing Development)</h5>
+                                <p class="card-subtitle mb-2 text-muted small">Healthcare | Mobile App Development</p>
+                                <p class="card-text">
+                                    Building an intelligent mobile application that uses AI to provide personalized fitness plans, track user progress, and offer nutritional advice, aiming to enhance overall health and wellness.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <a href="#" class="btn btn-outline-dark btn-sm me-2"><i class="fab fa-github me-1"></i> GitHub (WIP)</a>
+                                    <a href="#" class="btn btn-outline-info btn-sm"><i class="fas fa-info-circle me-1"></i> Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+        </div>
 
         <div class="text-center mt-5">
             <a href="portfolio.html" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-2"></i> Back to Portfolio Overview</a>
